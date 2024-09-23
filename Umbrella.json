@@ -1,0 +1,864 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Umbrella NextGen APIs - External",
+        "version": "1.0.0",
+        "description": "Umbrella API coolness",
+        "contact": {}
+    },
+    "servers": [
+        {
+            "url": "{{server}}reports"
+        }
+    ],
+    "paths": {
+        "/v2/top-destinations/dns": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "Destinations"
+                ],
+                "summary": "Top Destinations DNS",
+                "description": "Top Destinations DNS",
+                "operationId": "topDestinationsDns",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheFromDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheToDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/top-destinations/proxy": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "Destinations"
+                ],
+                "summary": "Top Destinations Proxy",
+                "description": "Top Destinations Proxy",
+                "operationId": "topDestinationsProxy",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheFromDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheToDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/top-destinations/firewall": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "Destinations"
+                ],
+                "summary": "Top Destinations Firewall",
+                "description": "Top Destinations Firewall",
+                "operationId": "topDestinationsFirewall",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheFromDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheToDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/total-requests": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "Total Requests"
+                ],
+                "summary": "Total Requests",
+                "description": "Total Requests",
+                "operationId": "totalRequests",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheFromDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheToDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/total-requests/dns": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "Total Requests"
+                ],
+                "summary": "Total Requests DNS",
+                "description": "Total Requests DNS",
+                "operationId": "totalRequestsDns",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheFromDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheToDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/total-requests/proxy": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "Total Requests"
+                ],
+                "summary": "Total Requests Proxy",
+                "description": "Total Requests Proxy",
+                "operationId": "totalRequestsProxy",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheFromDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheToDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/total-requests/firewall": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "Total Requests"
+                ],
+                "summary": "Total Requests Firewall",
+                "description": "Total Requests Firewall",
+                "operationId": "totalRequestsFirewall",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheFromDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheToDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/top-categories": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "Categories"
+                ],
+                "summary": "Top Categories",
+                "description": "Top Categories",
+                "operationId": "topCategories",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheFromDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheToDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/activity": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "Activity"
+                ],
+                "summary": "All Activity",
+                "description": "All Activity",
+                "operationId": "allActivity",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheFromDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheToDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/activity/dns": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "Activity"
+                ],
+                "summary": "DNS Activity",
+                "description": "DNS Activity",
+                "operationId": "dnsActivity",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheFromDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheToDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/activity/proxy": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "Activity"
+                ],
+                "summary": "Proxy Activity",
+                "description": "Proxy Activity",
+                "operationId": "proxyActivity",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheFromDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheToDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/activity/firewall": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "Activity"
+                ],
+                "summary": "Firewall Activity",
+                "description": "Firewall Activity",
+                "operationId": "firewallActivity",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheFromDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "EnterTheToDateInEpochMs"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "1"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/identities": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "Utility"
+                ],
+                "summary": "Roaming Devices",
+                "description": "Roaming Devices",
+                "operationId": "roamingDevices",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "100"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "0"
+                        }
+                    },
+                    {
+                        "name": "identitytypes",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "roaming"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/apiUsage/summary": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "API Usage"
+                ],
+                "summary": "API Summary",
+                "description": "API Summary",
+                "operationId": "apiSummary",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "YYYY-MM-DD"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "YYYY-MM-DD"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/apiUsage/requests": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "API Usage"
+                ],
+                "summary": "API Requests",
+                "description": "API Requests",
+                "operationId": "apiRequests",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "YYYY-MM-DD"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "YYYY-MM-DD"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/apiUsage/responses": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "API Usage"
+                ],
+                "summary": "API Responses",
+                "description": "API Responses",
+                "operationId": "apiResponses",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "YYYY-MM-DD"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "YYYY-MM-DD"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/apiUsage/keys": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "API Usage"
+                ],
+                "summary": "API Keys",
+                "description": "API Keys",
+                "operationId": "apiKeys",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "YYYY-MM-DD"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "example": "YYYY-MM-DD"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "1. Auth - Start Here",
+            "description": "First get your access token"
+        },
+        {
+            "name": "Deployments"
+        },
+        {
+            "name": "1. Networks and Sites"
+        },
+        {
+            "name": "2. Virtual Appliances"
+        },
+        {
+            "name": "3. Roaming Computers"
+        },
+        {
+            "name": "4. Internal Domains"
+        },
+        {
+            "name": "5. Tunnels"
+        },
+        {
+            "name": "6. Tagging"
+        },
+        {
+            "name": "Admin"
+        },
+        {
+            "name": "1. Roles"
+        },
+        {
+            "name": "2. Users"
+        },
+        {
+            "name": "3. API Keys"
+        },
+        {
+            "name": "Policies"
+        },
+        {
+            "name": "Reports",
+            "description": "First get your access token"
+        },
+        {
+            "name": "Destinations"
+        },
+        {
+            "name": "Total Requests"
+        },
+        {
+            "name": "Categories"
+        },
+        {
+            "name": "Activity"
+        },
+        {
+            "name": "Utility"
+        },
+        {
+            "name": "App Discovery"
+        },
+        {
+            "name": "API Usage"
+        },
+        {
+            "name": "Investigate"
+        }
+    ]
+}
