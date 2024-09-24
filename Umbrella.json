@@ -3,15 +3,705 @@
     "info": {
         "title": "Umbrella NextGen APIs - External",
         "version": "1.0.0",
-        "description": "Umbrella API coolness",
+        "description":"Umbrella NextGen APIs",
         "contact": {}
     },
     "servers": [
         {
+            "url": "{{Authurl}}"
+        },
+        {
+            "url": "{{server}}deployments"
+        },
+        {
+            "url": "{{server}}admin"
+        },
+        {
+            "url": "{{server}}policies"
+        },
+        {
             "url": "{{server}}reports"
+        },
+        {
+            "url": "{{server}}investigate"
         }
     ],
     "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "1. Auth - Start Here"
+                ],
+                "summary": "Get Access Token",
+                "description": "Get Access Token",
+                "operationId": "getAccessToken",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ]
+            }
+        },
+        "/v2/networks": {
+            "get": {
+                "tags": [
+                    "Deployments",
+                    "1. Networks and Sites"
+                ],
+                "summary": "List networks",
+                "description": "List networks",
+                "operationId": "listNetworks",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/internalnetworks": {
+            "get": {
+                "tags": [
+                    "Deployments",
+                    "1. Networks and Sites"
+                ],
+                "summary": "List internal networks",
+                "description": "List internal networks",
+                "operationId": "listInternalNetworks",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/sites": {
+            "get": {
+                "tags": [
+                    "Deployments",
+                    "5. Tunnels"
+                ],
+                "summary": "List Sites",
+                "description": "List Sites",
+                "operationId": "listSites",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/virtualappliances": {
+            "get": {
+                "tags": [
+                    "Deployments",
+                    "2. Virtual Appliances"
+                ],
+                "summary": "List all Virtual Appliances",
+                "description": "List all Virtual Appliances",
+                "operationId": "listAllVirtualAppliances",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/roamingcomputers": {
+            "get": {
+                "tags": [
+                    "Deployments",
+                    "3. Roaming Computers"
+                ],
+                "summary": "List all Roaming Computers",
+                "description": "List all Roaming Computers",
+                "operationId": "listAllRoamingComputers",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/internaldomains": {
+            "get": {
+                "tags": [
+                    "Deployments",
+                    "4. Internal Domains"
+                ],
+                "summary": "Get All internal domains",
+                "description": "Get All internal domains",
+                "operationId": "getAllInternalDomains",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Deployments",
+                    "4. Internal Domains"
+                ],
+                "summary": "Add internal domains",
+                "description": "Add internal domains",
+                "operationId": "addInternalDomains",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "example": "Enter a description for this domain"
+                                    },
+                                    "domain": {
+                                        "type": "string",
+                                        "example": "youtube.com"
+                                    },
+                                    "includeAllMobileDevices": {
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "includeAllVAs": {
+                                        "type": "boolean",
+                                        "example": true
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "Add internal domains": {
+                                    "value": {
+                                        "description": "Enter a description for this domain",
+                                        "domain": "youtube.com",
+                                        "includeAllMobileDevices": true,
+                                        "includeAllVAs": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/internaldomains/1034405": {
+            "delete": {
+                "tags": [
+                    "Deployments",
+                    "4. Internal Domains"
+                ],
+                "summary": "Remove internal domain",
+                "description": "Remove internal domain",
+                "operationId": "removeInternalDomain",
+                "requestBody": {
+                    "content": {
+                        "text/plain": {
+                            "examples": {
+                                "Remove internal domain": {
+                                    "value": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/tunnels": {
+            "get": {
+                "tags": [
+                    "Deployments",
+                    "5. Tunnels"
+                ],
+                "summary": "Get All Tunnels",
+                "description": "Get All Tunnels",
+                "operationId": "getAllTunnels",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Deployments",
+                    "5. Tunnels"
+                ],
+                "summary": "Add a Tunnel",
+                "description": "Add a Tunnel",
+                "operationId": "addATunnel",
+                "requestBody": {
+                    "content": {
+                        "text/plain": {
+                            "examples": {
+                                "Add a Tunnel": {
+                                    "value": "{\"name\":\"TunnelName\",\"deviceType\":\"other\",\"authentication\":{\"type\":\"PSK\",\"parameters\":{\"secret\":\"enterSecret\",\"idPrefix\":\"EnterPrefix\"}},\"serviceType\":\"SIG\",\"siteOriginId\":EnterSiteID}\n"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/tunnels/enterTunnelID": {
+            "delete": {
+                "tags": [
+                    "Deployments",
+                    "5. Tunnels"
+                ],
+                "summary": "Remove a Tunnel",
+                "description": "Remove a Tunnel",
+                "operationId": "removeATunnel",
+                "requestBody": {
+                    "content": {
+                        "text/plain": {
+                            "examples": {
+                                "Remove a Tunnel": {
+                                    "value": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/tags": {
+            "get": {
+                "tags": [
+                    "Deployments",
+                    "6. Tagging"
+                ],
+                "summary": "Get tags",
+                "description": "Get tags",
+                "operationId": "getTags",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Deployments",
+                    "6. Tagging"
+                ],
+                "summary": "Add a Tag",
+                "description": "Add a Tag",
+                "operationId": "addATag",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "test-tag-name"
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "Add a Tag": {
+                                    "value": {
+                                        "name": "test-tag-name"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/tags/tagId/devices": {
+            "post": {
+                "tags": [
+                    "Deployments",
+                    "6. Tagging"
+                ],
+                "summary": "Add Tags to Devices",
+                "description": "Add Tags to Devices",
+                "operationId": "addTagsToDevices",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "Add Tags to Devices": {
+                                    "value": "{ \"addOrigins\": [originId1,originId2]}"
+                                },
+                                "Remove Tags from Devices": {
+                                    "value": "{ \"removeOrigins\": [originId1,originId2]}"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/roles": {
+            "get": {
+                "tags": [
+                    "Admin",
+                    "1. Roles"
+                ],
+                "summary": "List all Roles",
+                "description": "List all Roles",
+                "operationId": "listAllRoles",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/users": {
+            "get": {
+                "tags": [
+                    "Admin",
+                    "2. Users"
+                ],
+                "summary": "List all Users",
+                "description": "List all Users",
+                "operationId": "listAllUsers",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Admin",
+                    "2. Users"
+                ],
+                "summary": "Create User",
+                "description": "Create User",
+                "operationId": "createUser",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "EnterEmail"
+                                    },
+                                    "firstname": {
+                                        "type": "string",
+                                        "example": "EnterFirstName"
+                                    },
+                                    "lastname": {
+                                        "type": "string",
+                                        "example": "EnterLastName"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "EnterAPassword"
+                                    },
+                                    "roleId": {
+                                        "type": "string",
+                                        "example": "EnterRoleID"
+                                    },
+                                    "timezone": {
+                                        "type": "string",
+                                        "example": "EnterTimeZone"
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "Create User": {
+                                    "value": {
+                                        "email": "EnterEmail",
+                                        "firstname": "EnterFirstName",
+                                        "lastname": "EnterLastName",
+                                        "password": "EnterAPassword",
+                                        "roleId": "EnterRoleID",
+                                        "timezone": "EnterTimeZone"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/users/EnterYourUserID": {
+            "get": {
+                "tags": [
+                    "Admin",
+                    "2. Users"
+                ],
+                "summary": "Get a Specific User",
+                "description": "Get a Specific User",
+                "operationId": "getASpecificUser",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Admin",
+                    "2. Users"
+                ],
+                "summary": "Delete User",
+                "description": "Delete User",
+                "operationId": "deleteUser",
+                "requestBody": {
+                    "content": {
+                        "text/plain": {
+                            "examples": {
+                                "Delete User": {
+                                    "value": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/apiKeys": {
+            "get": {
+                "tags": [
+                    "Admin",
+                    "3. API Keys"
+                ],
+                "summary": "List all Keys",
+                "description": "List all Keys",
+                "operationId": "listAllKeys",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Admin",
+                    "3. API Keys"
+                ],
+                "summary": "Create API Key",
+                "description": "Create API Key",
+                "operationId": "createApiKey",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "DevNet WorkShop Key"
+                                    },
+                                    "scopes": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "example": "admin.users:read"
+                                        },
+                                        "example": [
+                                            "admin.users:read",
+                                            "reports.utilities:read",
+                                            "reports.granularevents:read",
+                                            "reports.aggregations:read",
+                                            "policies.destinationlists:write",
+                                            "policies.destinationlists:read",
+                                            "policies.destinations:write",
+                                            "policies.destinations:read"
+                                        ]
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "Create API Key": {
+                                    "value": {
+                                        "name": "DevNet WorkShop Key",
+                                        "scopes": [
+                                            "admin.users:read",
+                                            "reports.utilities:read",
+                                            "reports.granularevents:read",
+                                            "reports.aggregations:read",
+                                            "policies.destinationlists:write",
+                                            "policies.destinationlists:read",
+                                            "policies.destinations:write",
+                                            "policies.destinations:read"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "security": [
+                    {}
+                ]
+            }
+        },
+        "/v2/destinationlists": {
+            "get": {
+                "tags": [
+                    "Policies"
+                ],
+                "summary": "List all Destination Lists",
+                "description": "List all Destination Lists",
+                "operationId": "listAllDestinationLists",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/destinationlists/EnterADestinationListId/destinations": {
+            "get": {
+                "tags": [
+                    "Policies"
+                ],
+                "summary": "List Destinations for a Destination List",
+                "description": "List Destinations for a Destination List",
+                "operationId": "listDestinationsForADestinationList",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Policies"
+                ],
+                "summary": "Add Destinations to a List",
+                "description": "Add Destinations to a List",
+                "operationId": "addDestinationsToAList",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "comment": {
+                                            "type": "string",
+                                            "example": "EnterAComment"
+                                        },
+                                        "destination": {
+                                            "type": "string",
+                                            "example": "EnterADestination"
+                                        }
+                                    }
+                                },
+                                "example": [
+                                    {
+                                        "comment": "EnterAComment",
+                                        "destination": "EnterADestination"
+                                    },
+                                    {
+                                        "comment": "EnterAComment",
+                                        "destination": "EnterADestination"
+                                    }
+                                ]
+                            },
+                            "examples": {
+                                "Add Destinations to a List": {
+                                    "value": [
+                                        {
+                                            "comment": "EnterAComment",
+                                            "destination": "EnterADestination"
+                                        },
+                                        {
+                                            "comment": "EnterAComment",
+                                            "destination": "EnterADestination"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/destinationlists/EnterADestinationListId/destinations/remove": {
+            "delete": {
+                "tags": [
+                    "Policies"
+                ],
+                "summary": "Remove Destinations from a List",
+                "description": "Remove Destinations from a List",
+                "operationId": "removeDestinationsFromAList",
+                "requestBody": {
+                    "content": {
+                        "text/plain": {
+                            "examples": {
+                                "Remove Destinations from a List": {
+                                    "value": "[DestinationID1,DestinationID2]"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
         "/v2/top-destinations/dns": {
             "get": {
                 "tags": [
@@ -654,6 +1344,92 @@
                 }
             }
         },
+        "/v2/appDiscovery/applications": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "App Discovery"
+                ],
+                "summary": "Applications",
+                "description": "Applications",
+                "operationId": "applications",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/appDiscovery/applications/<enterAppID>/risk": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "App Discovery"
+                ],
+                "summary": "App Details",
+                "description": "App Details",
+                "operationId": "appDetails",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/appDiscovery/applications/<enterAppID>/identities": {
+            "get": {
+                "tags": [
+                    "Reports",
+                    "App Discovery"
+                ],
+                "summary": "App Identities",
+                "description": "App Identities",
+                "operationId": "appIdentities",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/appDiscovery/applications/<enterAppID>": {
+            "patch": {
+                "tags": [
+                    "Reports",
+                    "App Discovery"
+                ],
+                "summary": "Update App Label",
+                "description": "Update App Label",
+                "operationId": "updateAppLabel",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "label": {
+                                        "type": "string",
+                                        "example": "unreviewed"
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "Update App Label": {
+                                    "value": {
+                                        "label": "unreviewed"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
         "/v2/apiUsage/summary": {
             "get": {
                 "tags": [
@@ -788,6 +1564,119 @@
                         "description": ""
                     }
                 }
+            }
+        },
+        "/v2/domains/categorization/enterDomainName": {
+            "get": {
+                "tags": [
+                    "Investigate"
+                ],
+                "summary": "Domain Categorization",
+                "description": "Domain Categorization",
+                "operationId": "domainCategorization",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/domains/risk-score/enterDomainName": {
+            "get": {
+                "tags": [
+                    "Investigate"
+                ],
+                "summary": "Domain Risk Score",
+                "description": "Domain Risk Score",
+                "operationId": "domainRiskScore",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/security/name/enterDomainURL": {
+            "get": {
+                "tags": [
+                    "Investigate"
+                ],
+                "summary": "Domain Security Score Information",
+                "description": "Domain Security Score Information",
+                "operationId": "domainSecurityScoreInformation",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/topmillion": {
+            "get": {
+                "tags": [
+                    "Investigate"
+                ],
+                "summary": "Top Most Seen Domains",
+                "description": "Top Most Seen Domains",
+                "operationId": "topMostSeenDomains",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/samples/enterDomainURL": {
+            "get": {
+                "tags": [
+                    "Investigate"
+                ],
+                "summary": "Get Samples for Domain, IP, or URL",
+                "description": "Get Samples for Domain, IP, or URL",
+                "operationId": "getSamplesForDomainIpOrUrl",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/domains/volume/enterDomainURL": {
+            "get": {
+                "tags": [
+                    "Investigate"
+                ],
+                "summary": "Get Domain Volume",
+                "description": "Get Domain Volume",
+                "operationId": "getDomainVolume",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/v2/pdns/name/enterDomainURL": {
+            "get": {
+                "tags": [
+                    "Investigate"
+                ],
+                "summary": "Domain Resource Records",
+                "description": "Domain Resource Records",
+                "operationId": "domainResourceRecords",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "basicAuth": {
+                "type": "http",
+                "scheme": "basic"
             }
         }
     },
