@@ -1,0 +1,166 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Keap REST API",
+    "description": "API for accessing and managing various resources in Keap (formerly Infusionsoft).",
+    "termsOfService": "https://keap.com/legal",
+    "contact": {
+      "name": "Developer Support",
+      "url": "https://developer.keap.com/get-support/"
+    },
+    "version": "1.70.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.infusionsoft.com/crm/rest",
+      "description": "Production server for Keap REST API."
+    }
+  ],
+  "paths": {
+    "/v1/contacts/{contactId}": {
+      "get": {
+        "tags": ["Contacts"],
+        "summary": "Get contact by ID",
+        "description": "Retrieve the details of a specific contact by ID.",
+        "operationId": "getContactById",
+        "parameters": [
+          {
+            "name": "contactId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contact details retrieved successfully."
+          },
+          "404": {
+            "description": "Contact not found."
+          }
+        }
+      }
+    },
+    "/v1/notes/{noteId}": {
+      "get": {
+        "tags": ["Notes"],
+        "summary": "Retrieve a note by ID",
+        "description": "Fetches a specific note by its ID.",
+        "operationId": "getNoteById",
+        "parameters": [
+          {
+            "name": "noteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Note retrieved successfully."
+          },
+          "404": {
+            "description": "Note not found."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Contact": {
+        "type": "object",
+        "properties": {
+          "given_name": { "type": "string" },
+          "family_name": { "type": "string" },
+          "preferred_locale": { "type": "string" },
+          "owner_id": { "type": "string" },
+          "suffix": { "type": "string" },
+          "birthday": { "type": "string", "format": "date" },
+          "anniversary": { "type": "string", "format": "date" },
+          "addresses": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "email_addresses": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "phone_numbers": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "fax_numbers": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "job_title": { "type": "string" },
+          "custom_fields": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "Note": {
+        "type": "object",
+        "properties": {
+          "note": {
+            "type": "string",
+            "description": "The content of the note."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the note was created."
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the note was last updated."
+          }
+        }
+      },
+      "CustomFieldOption": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "label": { "type": "string" }
+              }
+            }
+          }
+        }
+      },
+      "Throwable": {
+        "type": "object",
+        "properties": {
+          "message": { "type": "string" },
+          "cause": {
+            "type": "object",
+            "properties": {
+              "message": { "type": "string" },
+              "details": { "type": "string" }
+            }
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "message": { "type": "string" },
+          "details": { "type": "string" }
+        }
+      }
+    }
+  }
+}
