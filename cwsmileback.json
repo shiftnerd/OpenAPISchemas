@@ -1,0 +1,758 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "SmileBack API",
+    "description" : "\n## Introduction\n#### Who is this API for?\nThis API is specifically designed for customers, their business intelligence and reporting solutions that want to replicate a customer's SmileBack dataset into their internal storage systems for further analysis and then keep those two datasets in sync.\n#### What does this API offer?\nThe SmileBack Data Replication API offers  **purely read-only** access to a customer's own dataset. Special focus is given to making incremental synchronization as fast and efficient as possible on both ends. The customer has full control over granting and revoking their BI/reporting solution, or any other API consuming system, right to access their dataset.\n#### Incremental Updates (IMPORTANT)\nThe integration should regularly enough, but not too frequently, call the SmileBack API to bring its own data storage in sync with the latest dataset in SmileBack. \nSo, when designing solution that will consume SmileBack data, Integrator should think of a balance between Customer's needs on rational frequency of data synchronizations, to provide value to Customer and at the same time optimize API usage. \nHence, please take the following aspects into account:\n- optimize the number of API calls (necessary syncs)\n- minimize the amount of bandwidth used\n- minimize the processing power required - both for the API provider as well as for the API consumer\n#### Authorization flow\nSpecifically for Customers, SmileBack Data Replication API offers simplified authorization flow - **resource owner password-based**.\nFirst, navigate to \"API Credentials\" page under Account menu.\nCopy Client ID & Secret pair, unique and specific for each Customer.\nEncode this pair of keys with Base64 and include into Authorization header: \"Authorization Basic <ClientID:ClientSecret_encoded_keys>\".\nThen include the following in body of request as form_data:\n- grant_type: password\n- scope: read read_recent\n- username: \"email\"\n- password: \"password\"\n\nPrepared authorization request has to call this endpoint:\n```\n    POST https://<app_url>/api/token/\n```\nFor better understanding of how **resource owner password-based authorization flow** works, click the \"Authorize\" button below here in Swagger to call for \"Available authorizations\" modal. There in the form you will see what data should be provided within the authorization request header in order to authorize and get access/refresh tokens pair. You will also see, as stated above, that **only read scopes** are declared in SmileBack Data Replication API, as by design it offers **purely read-only access** to a customer's own dataset.\n\nPlease also note, in the full API documentation (PDF is dowloadable here: \"https://docs.connectwise.com/SmileBack/040/010/010\") you'll encounter yet another authorization endpoint - https://<app_url>/account/api/authorize/ - which is implemented to support full OAuth flow, and designed for 3d party systems Integrators, who operate in multi-tenant environment, therefore should not be used for simplified password-based authorization.\n\nFor more information and assistance, please contact us at help@smileback.com\n",
+    "termsOfService" : "https://www.smileback.com/terms/",
+    "version" : "v3"
+  },
+  "servers" : [ {
+    "url" : "https://app.smileback.io/api/v3"
+  } ],
+  "security" : [ {
+    "SmileBack" : [ ]
+  } ],
+  "paths" : {
+    "/csat-agents/" : {
+      "get" : {
+        "tags" : [ "csat-agents" ],
+        "description" : "API endpoint for listing active csat agents.",
+        "operationId" : "csat-agents_list",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : { }
+          }
+        }
+      }
+    },
+    "/csat-boards/" : {
+      "get" : {
+        "tags" : [ "csat-boards" ],
+        "description" : "API endpoint for listing active csat agents.",
+        "operationId" : "csat-boards_list",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : { }
+          }
+        }
+      }
+    },
+    "/csat-companies/" : {
+      "get" : {
+        "tags" : [ "csat-companies" ],
+        "description" : "API endpoint for listing active csat agents.",
+        "operationId" : "csat-companies_list",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : { }
+          }
+        }
+      }
+    },
+    "/csat-contacts/" : {
+      "get" : {
+        "tags" : [ "csat-contacts" ],
+        "description" : "API endpoint for listing active csat agents.",
+        "operationId" : "csat-contacts_list",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : { }
+          }
+        }
+      }
+    },
+    "/nps-campaigns/" : {
+      "get" : {
+        "tags" : [ "nps-campaigns" ],
+        "description" : "API endpoint for listing active nps campaigns.",
+        "operationId" : "nps-campaigns_list",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : { }
+          }
+        }
+      }
+    },
+    "/nps-responses/" : {
+      "get" : {
+        "tags" : [ "nps-responses" ],
+        "description" : "API endpoint for listing and syncing nps responses.",
+        "operationId" : "nps-responses_list",
+        "parameters" : [ {
+          "name" : "created_since",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "campaign_name",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "score_gt",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "score_lt",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "score_exact",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "Number of results to return per page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "offset",
+          "in" : "query",
+          "description" : "The initial index from which to return the results.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/nps-responses/{id}/" : {
+      "get" : {
+        "tags" : [ "nps-responses" ],
+        "description" : "API endpoint for listing and syncing nps responses.",
+        "operationId" : "nps-responses_read",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/NPSResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/prj-responses/" : {
+      "get" : {
+        "tags" : [ "prj-responses" ],
+        "description" : "API endpoint for listing project responses.",
+        "operationId" : "prj-responses_list",
+        "parameters" : [ {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "Number of results to return per page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "offset",
+          "in" : "query",
+          "description" : "The initial index from which to return the results.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_1"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/prj-surveys/" : {
+      "get" : {
+        "tags" : [ "prj-surveys" ],
+        "description" : "API endpoint for listing active project surveys.",
+        "operationId" : "prj-surveys_list",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : { }
+          }
+        }
+      }
+    },
+    "/reviews/" : {
+      "get" : {
+        "tags" : [ "reviews" ],
+        "description" : "API endpoint for listing and syncing reviews.",
+        "operationId" : "reviews_list",
+        "parameters" : [ {
+          "name" : "modified_since",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "include_unrated",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "Number of results to return per page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "offset",
+          "in" : "query",
+          "description" : "The initial index from which to return the results.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_2"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reviews/recent/" : {
+      "get" : {
+        "tags" : [ "reviews" ],
+        "description" : "API endpoint for listing and syncing reviews.",
+        "operationId" : "reviews_recent",
+        "parameters" : [ {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "Number of results to return per page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "offset",
+          "in" : "query",
+          "description" : "The initial index from which to return the results.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_2"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reviews/{id}/" : {
+      "get" : {
+        "tags" : [ "reviews" ],
+        "description" : "API endpoint for listing and syncing reviews.",
+        "operationId" : "reviews_read",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Review"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "InternalContact" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "title" : "ID",
+            "type" : "integer",
+            "readOnly" : true
+          },
+          "first_name" : {
+            "title" : "First name",
+            "maxLength" : 255,
+            "type" : "string"
+          },
+          "last_name" : {
+            "title" : "Last name",
+            "maxLength" : 255,
+            "type" : "string"
+          },
+          "email" : {
+            "title" : "Email",
+            "maxLength" : 254,
+            "minLength" : 1,
+            "type" : "string",
+            "format" : "email"
+          },
+          "company" : {
+            "title" : "Company",
+            "maxLength" : 128,
+            "type" : "string"
+          },
+          "title" : {
+            "title" : "Title",
+            "maxLength" : 128,
+            "type" : "string"
+          },
+          "location" : {
+            "title" : "Location",
+            "maxLength" : 128,
+            "type" : "string"
+          }
+        }
+      },
+      "NPSResponse" : {
+        "required" : [ "contact" ],
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "title" : "ID",
+            "type" : "integer",
+            "readOnly" : true
+          },
+          "score" : {
+            "title" : "Score",
+            "maximum" : 2147483647,
+            "minimum" : -2147483648,
+            "type" : "integer"
+          },
+          "comment" : {
+            "title" : "Comment",
+            "type" : "string",
+            "readOnly" : true
+          },
+          "has_marketing_permission" : {
+            "title" : "Has marketing permission",
+            "type" : "boolean",
+            "description" : "Indicates that end user has given permission for his comment to be used by Customer for marketing purposes."
+          },
+          "contact" : {
+            "$ref" : "#/components/schemas/InternalContact"
+          },
+          "contact_remote_id" : {
+            "title" : "Contact remote id",
+            "type" : "string",
+            "readOnly" : true
+          },
+          "campaign_name" : {
+            "title" : "Campaign name",
+            "type" : "string",
+            "readOnly" : true
+          },
+          "created_at" : {
+            "title" : "Created at",
+            "type" : "string",
+            "format" : "date-time"
+          }
+        }
+      },
+      "ProjectsResponse" : {
+        "required" : [ "contact", "response" ],
+        "type" : "object",
+        "properties" : {
+          "response" : {
+            "title" : "Response",
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string",
+              "nullable" : true
+            }
+          },
+          "contact" : {
+            "title" : "Contact",
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string",
+              "nullable" : true
+            }
+          }
+        }
+      },
+      "TicketSegment" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "title" : "Id",
+            "minLength" : 1,
+            "type" : "string"
+          },
+          "name" : {
+            "title" : "Name",
+            "minLength" : 1,
+            "type" : "string"
+          }
+        }
+      },
+      "Ticket" : {
+        "required" : [ "id", "segment", "title" ],
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "title" : "Id",
+            "minLength" : 1,
+            "type" : "string"
+          },
+          "title" : {
+            "title" : "Title",
+            "minLength" : 1,
+            "type" : "string"
+          },
+          "segment" : {
+            "$ref" : "#/components/schemas/TicketSegment"
+          },
+          "agents" : {
+            "type" : "array",
+            "items" : {
+              "minLength" : 1,
+              "type" : "string"
+            }
+          },
+          "closed_on" : {
+            "title" : "Closed on",
+            "type" : "string",
+            "description" : "The moment the ticket was closed in the TSS. (null on legacy reactions/if we were not notified about closure.)",
+            "format" : "date-time",
+            "nullable" : true
+          }
+        }
+      },
+      "Contact" : {
+        "required" : [ "email", "id", "name" ],
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "title" : "Id",
+            "minLength" : 1,
+            "type" : "string"
+          },
+          "name" : {
+            "title" : "Name",
+            "minLength" : 1,
+            "type" : "string"
+          },
+          "email" : {
+            "title" : "Email",
+            "minLength" : 1,
+            "type" : "string"
+          }
+        }
+      },
+      "Company" : {
+        "required" : [ "id" ],
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "title" : "Id",
+            "minLength" : 1,
+            "type" : "string"
+          },
+          "name" : {
+            "title" : "Name",
+            "type" : "string"
+          },
+          "territory_name" : {
+            "title" : "Territory name",
+            "type" : "string",
+            "nullable" : true
+          },
+          "territory_remote_id" : {
+            "title" : "Territory remote id",
+            "type" : "string",
+            "nullable" : true
+          },
+          "market_name" : {
+            "title" : "Market name",
+            "type" : "string",
+            "nullable" : true
+          },
+          "market_remote_id" : {
+            "title" : "Market remote id",
+            "type" : "string",
+            "nullable" : true
+          }
+        }
+      },
+      "Review" : {
+        "required" : [ "comment", "company", "contact", "ticket" ],
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "title" : "ID",
+            "type" : "integer",
+            "readOnly" : true
+          },
+          "rating" : {
+            "title" : "Rating",
+            "type" : "string",
+            "readOnly" : true
+          },
+          "comment" : {
+            "title" : "Comment",
+            "minLength" : 1,
+            "type" : "string"
+          },
+          "ticket" : {
+            "$ref" : "#/components/schemas/Ticket"
+          },
+          "contact" : {
+            "$ref" : "#/components/schemas/Contact"
+          },
+          "company" : {
+            "$ref" : "#/components/schemas/Company"
+          },
+          "status" : {
+            "title" : "Status",
+            "type" : "string",
+            "enum" : [ "open", "done", "deleted" ]
+          },
+          "tags" : {
+            "maxItems" : 20,
+            "type" : "array",
+            "items" : {
+              "title" : "Tags",
+              "maxLength" : 50,
+              "minLength" : 1,
+              "type" : "string"
+            }
+          },
+          "has_marketing_permission" : {
+            "title" : "Has marketing permission",
+            "type" : "boolean",
+            "description" : "Indicates that end user has given permission for their comment to be used by Customer for marketing purposes."
+          },
+          "viewed_on" : {
+            "title" : "Viewed on",
+            "type" : "string",
+            "description" : "The moment the ticket notification was first viewed. (null if it has not been viewed yet / is not used in a medium that supports viewing.)",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "rated_on" : {
+            "title" : "Rated on",
+            "type" : "string",
+            "description" : "The moment the ticket was first rated by a client. (null if it has not been rated yet: then also sentiment null.)",
+            "format" : "date-time",
+            "nullable" : true
+          },
+          "permalink" : {
+            "title" : "Permalink",
+            "type" : "string",
+            "readOnly" : true
+          },
+          "last_modified" : {
+            "title" : "Last modified",
+            "type" : "string",
+            "description" : "The moment any parameter of the ticket has last been changed. Meant to facilitate incremental syncing reactions across multiple systems.",
+            "format" : "date-time"
+          }
+        }
+      },
+      "inline_response_200" : {
+        "required" : [ "count", "results" ],
+        "type" : "object",
+        "properties" : {
+          "count" : {
+            "type" : "integer"
+          },
+          "next" : {
+            "type" : "string",
+            "format" : "uri",
+            "nullable" : true
+          },
+          "previous" : {
+            "type" : "string",
+            "format" : "uri",
+            "nullable" : true
+          },
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/NPSResponse"
+            }
+          }
+        }
+      },
+      "inline_response_200_1" : {
+        "required" : [ "count", "results" ],
+        "type" : "object",
+        "properties" : {
+          "count" : {
+            "type" : "integer"
+          },
+          "next" : {
+            "type" : "string",
+            "format" : "uri",
+            "nullable" : true
+          },
+          "previous" : {
+            "type" : "string",
+            "format" : "uri",
+            "nullable" : true
+          },
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ProjectsResponse"
+            }
+          }
+        }
+      },
+      "inline_response_200_2" : {
+        "required" : [ "count", "results" ],
+        "type" : "object",
+        "properties" : {
+          "count" : {
+            "type" : "integer"
+          },
+          "next" : {
+            "type" : "string",
+            "format" : "uri",
+            "nullable" : true
+          },
+          "previous" : {
+            "type" : "string",
+            "format" : "uri",
+            "nullable" : true
+          },
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Review"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "SmileBack" : {
+        "type" : "oauth2",
+        "flows" : {
+          "password" : {
+            "tokenUrl" : "https://app.smileback.io/api/token/",
+            "scopes" : {
+              "read" : "Grants read access",
+              "read_recent" : "Grants read_recent access"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-original-swagger-version" : "2.0"
+}

@@ -1,0 +1,1230 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "CloudRadial",
+    "description": "The CloudRadial API is currently in development. For more information visit <a href='https://radials.io/api' target='_blank'>https://radials.io/api</a>",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://api.us.cloudradial.com"
+    }
+  ],
+  "paths": {
+    "/api/beta/archive": {
+      "get": {
+        "tags": [
+          "Archive"
+        ],
+        "parameters": [
+          {
+            "name": "Condition",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Filter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Take",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Value",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "get_api_beta_archive"
+      },
+      "post": {
+        "tags": [
+          "Archive"
+        ],
+        "parameters": [
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/ArchiveApiDto"
+              }
+            },
+            "application/json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/ArchiveApiDto"
+              }
+            },
+            "text/json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/ArchiveApiDto"
+              }
+            },
+            "application/*+json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/ArchiveApiDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "post_api_beta_archive"
+      }
+    },
+    "/api/beta/archive/{archiveId}": {
+      "delete": {
+        "tags": [
+          "Archive"
+        ],
+        "parameters": [
+          {
+            "name": "archiveId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "delete_api_beta_archive_archiveId"
+      }
+    },
+    "/api/beta/archive/{archiveId}/item": {
+      "get": {
+        "tags": [
+          "ArchiveItem"
+        ],
+        "parameters": [
+          {
+            "name": "archiveId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Condition",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Filter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Take",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Value",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "get_api_beta_archive_archiveId_item"
+      },
+      "post": {
+        "tags": [
+          "ArchiveItem"
+        ],
+        "description": "Attach one or more files using the Content-Type multipart/form-data. You'll receive back a list of the attachmentIds created.",
+        "parameters": [
+          {
+            "name": "archiveId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "post_api_beta_archive_archiveId_item"
+      }
+    },
+    "/api/beta/archive/{archiveId}/item/{itemId}": {
+      "delete": {
+        "tags": [
+          "ArchiveItem"
+        ],
+        "parameters": [
+          {
+            "name": "archiveId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "delete_api_beta_archive_archiveId_item_itemId"
+      }
+    },
+    "/api/beta/article": {
+      "get": {
+        "tags": [
+          "Article"
+        ],
+        "parameters": [
+          {
+            "name": "Condition",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Filter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Take",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Value",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "get_api_beta_article"
+      },
+      "post": {
+        "tags": [
+          "Article"
+        ],
+        "parameters": [
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/ArticleApiDto"
+              }
+            },
+            "application/json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/ArticleApiDto"
+              }
+            },
+            "text/json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/ArticleApiDto"
+              }
+            },
+            "application/*+json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/ArticleApiDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "post_api_beta_article"
+      },
+      "delete": {
+        "tags": [
+          "Article"
+        ],
+        "parameters": [
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteApiDto"
+              }
+            },
+            "application/json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteApiDto"
+              }
+            },
+            "text/json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteApiDto"
+              }
+            },
+            "application/*+json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteApiDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "delete_api_beta_article"
+      }
+    },
+    "/api/beta/company": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "parameters": [
+          {
+            "name": "Condition",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Filter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Take",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Value",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "get_api_beta_company"
+      }
+    },
+    "/api/beta/feedback": {
+      "get": {
+        "tags": [
+          "Feedback"
+        ],
+        "parameters": [
+          {
+            "name": "Condition",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Direction",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Filter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Order",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Take",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Value",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "get_api_beta_feedback"
+      },
+      "post": {
+        "tags": [
+          "Feedback"
+        ],
+        "parameters": [
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/FeedbackApiDto"
+              }
+            },
+            "application/json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/FeedbackApiDto"
+              }
+            },
+            "text/json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/FeedbackApiDto"
+              }
+            },
+            "application/*+json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/FeedbackApiDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "post_api_beta_feedback"
+      },
+      "delete": {
+        "tags": [
+          "Feedback"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "delete_api_beta_feedback"
+      }
+    },
+    "/api/beta/token": {
+      "get": {
+        "tags": [
+          "Token"
+        ],
+        "description": "Set companyId = 0 to view partner level tokens.",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "get_api_beta_token"
+      },
+      "post": {
+        "tags": [
+          "Token"
+        ],
+        "description": "Set companyId = 0 to set partner level token. Token will be added or replaced. Token is case-sensitive.",
+        "parameters": [
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenApiDto"
+              }
+            },
+            "application/json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenApiDto"
+              }
+            },
+            "text/json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenApiDto"
+              }
+            },
+            "application/*+json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenApiDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "post_api_beta_token"
+      },
+      "delete": {
+        "tags": [
+          "Token"
+        ],
+        "description": "Set companyId = 0 to delete partner level token. Token is case-sensitive. Value is ignored.",
+        "parameters": [
+          {
+            "name": "x-api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenApiDto"
+              }
+            },
+            "application/json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenApiDto"
+              }
+            },
+            "text/json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenApiDto"
+              }
+            },
+            "application/*+json; x-api-version=1": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenApiDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "operationId": "delete_api_beta_token"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ArchiveApiDto": {
+        "type": "object",
+        "properties": {
+          "alertKeywords": {
+            "type": "string",
+            "nullable": true
+          },
+          "alwaysSendAlert": {
+            "type": "boolean"
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyGroups": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dateLastReceived": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "emailNoticeList": {
+            "type": "string",
+            "nullable": true
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "estimatedTime": {
+            "type": "number",
+            "format": "double"
+          },
+          "flowPartnerWebhook": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "inboundAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "isSendOnEveryError": {
+            "type": "boolean"
+          },
+          "isSendToPsa": {
+            "type": "boolean"
+          },
+          "isShowMessage": {
+            "type": "boolean"
+          },
+          "itemCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "jsonPartnerWebhook": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastErrorDays": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastErrorKeywords": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "partnerEmailList": {
+            "type": "string",
+            "nullable": true
+          },
+          "psaBoard": {
+            "type": "string",
+            "nullable": true
+          },
+          "psaCategory": {
+            "type": "string",
+            "nullable": true
+          },
+          "psaItem": {
+            "type": "string",
+            "nullable": true
+          },
+          "psaPriority": {
+            "type": "string",
+            "nullable": true
+          },
+          "psaSource": {
+            "type": "string",
+            "nullable": true
+          },
+          "psaStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "psaSubType": {
+            "type": "string",
+            "nullable": true
+          },
+          "psaType": {
+            "type": "string",
+            "nullable": true
+          },
+          "requiredKeywords": {
+            "type": "string",
+            "nullable": true
+          },
+          "retainForDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "slackPartnerWebhook": {
+            "type": "string",
+            "nullable": true
+          },
+          "slackWebhook": {
+            "type": "string",
+            "nullable": true
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "teamsPartnerWebhook": {
+            "type": "string",
+            "nullable": true
+          },
+          "teamsWebhook": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalItemSize": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userGroups": {
+            "type": "string",
+            "nullable": true
+          },
+          "warnOnPastDays": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ArticleApiDto": {
+        "required": [
+          "body",
+          "category",
+          "companyId",
+          "groups",
+          "subject"
+        ],
+        "type": "object",
+        "properties": {
+          "articleSource": {
+            "$ref": "#/components/schemas/ArticleSourceTypes"
+          },
+          "author": {
+            "type": "string",
+            "nullable": true
+          },
+          "body": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "category": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "companyId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "date": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalArticleId": {
+            "type": "string",
+            "nullable": true
+          },
+          "groups": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isFrontPage": {
+            "type": "boolean"
+          },
+          "isNewWindow": {
+            "type": "boolean"
+          },
+          "isPinned": {
+            "type": "boolean"
+          },
+          "permalinkKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "subject": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "tags": {
+            "type": "string",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ArticleSourceTypes": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "DeleteApiDto": {
+        "required": [
+          "companyId",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "companyId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FeedbackApiDto": {
+        "type": "object",
+        "properties": {
+          "agentEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "agentFirstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "agentLastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "agentPsaId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "companyId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyPsaId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "feedbackComment": {
+            "type": "string",
+            "nullable": true
+          },
+          "feedbackIpAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "feedbackOnWebsite": {
+            "type": "boolean"
+          },
+          "feedbackRating": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "feedbackReferralClick": {
+            "type": "boolean"
+          },
+          "feedbackWantsFollowUp": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "sentiment": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "source": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ticketDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "ticketPsaId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ticketString": {
+            "type": "string",
+            "nullable": true
+          },
+          "ticketSubject": {
+            "type": "string",
+            "nullable": true
+          },
+          "userAgent": {
+            "type": "string",
+            "nullable": true
+          },
+          "userEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "userFirstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "userLastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "userPsaId": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Possible values for source are 0: Ticket View, 1: Web Form, 2: Import, 3: Signature, 4: API Integration."
+      },
+      "TokenApiDto": {
+        "type": "object",
+        "properties": {
+          "companyId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "token": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Basic": {
+        "type": "http",
+        "description": "Please enter your user name (public key) and password (private key):",
+        "scheme": "basic"
+      }
+    }
+  },
+  "security": [
+    {
+      "Basic": []
+    }
+  ]
+}

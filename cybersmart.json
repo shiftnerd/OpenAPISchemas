@@ -1,0 +1,374 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "CyberSmart API",
+    "description" : "\n\n# **CyberSmart API for Partners and Distributors**\n\nThis API allows partners and distributors to access data required for their own dashboards. To use the API, you'll need the `client_id` and `client_secret`, which are available in the CyberSmart dashboard under [CyberSmart API](/partners/cybersmart-api/).\n\n## How to Get an Access Token\n\n1. Retrieve your `client_id` and `client_secret` from the CyberSmart dashboard.\n2. Use these credentials to obtain an access token via the client credentials flow. You can do this through the \"Authorize\" button or by using tools like cURL or Postman.\n\n    Example Request (using cURL):\n\n    ```bash\n    curl -X POST -H \"Cache-Control: no-cache\" -H \"Content-Type: application/x-www-form-urlencoded\" \"https://app.cybersmart.co.uk/oauth2/token/\" -d \"grant_type=client_credentials\" -d \"client_id=your_client_id\" -d \"client_secret=your_client_secret\"\n    ```\n    Please replace `your_client_id` and `your_client_secret` with your actual credentials.\n\n3. Use the access token provided in the response as a bearer token in the `Authorization` header to access API endpoints, i.e. `-H \"Authorization: Bearer your_token\"`, where `your_token` is the access token you received from the request above.\n\n",
+    "termsOfService" : "https://app.cybersmart.co.uk",
+    "contact" : {
+      "email" : "support@cybersmart.co.uk"
+    },
+    "license" : {
+      "name" : "CyberSmart License"
+    },
+    "version" : "v1"
+  },
+  "servers" : [ {
+    "url" : "https://app.cybersmart.co.uk/"
+  } ],
+  "security" : [ {
+    "Oauth2" : [ ]
+  } ],
+  "paths" : {
+    "/api/v3/organisations/certifications/" : {
+      "get" : {
+        "tags" : [ "api" ],
+        "operationId" : "api_v3_organisations_certifications_list",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Page number for pagination",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "page_size",
+          "in" : "query",
+          "description" : "Number of items per page",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "status",
+          "in" : "query",
+          "description" : "Certification status",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "Expired", "Expiring", "Certified", "Requires attention", "Declaration signed", "Awaiting declaration signature", "Survey completed", "In survey", "Not started" ]
+          }
+        }, {
+          "name" : "type",
+          "in" : "query",
+          "description" : "Certification type",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "cyber essentials", "cyber essentials plus", "iasme governance", "gdpr", "health check", "cybersmart complete", "iasme cyber assurance", "assurance guarantee", "cert nz", "essential eight" ]
+          }
+        }, {
+          "name" : "organisation",
+          "in" : "query",
+          "description" : "Organisation name",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Missing field or invalid field",
+            "content" : { }
+          },
+          "401" : {
+            "description" : "Authentication credentials were not provided.",
+            "content" : { }
+          },
+          "403" : {
+            "description" : "Invalid credentials",
+            "content" : { }
+          },
+          "429" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_429"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v3/organisations/security-control/" : {
+      "get" : {
+        "tags" : [ "api" ],
+        "description" : "API view for the Security Control Check Status.",
+        "operationId" : "api_v3_organisations_security-control_list",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Page number for pagination",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "page_size",
+          "in" : "query",
+          "description" : "Number of items per page",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "organisation",
+          "in" : "query",
+          "description" : "Organisation name",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "user",
+          "in" : "query",
+          "description" : "User email",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "app",
+          "in" : "query",
+          "description" : "App hostname",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "security_control",
+          "in" : "query",
+          "description" : "Security control title",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "status",
+          "in" : "query",
+          "description" : "Security control status",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "Passed", "Failed" ]
+          }
+        }, {
+          "name" : "status_changed_date",
+          "in" : "query",
+          "description" : "Status changed date",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "today/yesterday/YYYY-MM-DD"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_1"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Missing field or invalid field",
+            "content" : { }
+          },
+          "401" : {
+            "description" : "Authentication credentials were not provided.",
+            "content" : { }
+          },
+          "403" : {
+            "description" : "Invalid credentials",
+            "content" : { }
+          },
+          "429" : {
+            "description" : "",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_429"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "inline_response_429" : {
+        "type" : "object",
+        "properties" : {
+          "detail" : {
+            "type" : "string",
+            "description" : "Rate limit exceeded message"
+          }
+        }
+      },
+      "inline_response_200_1_results" : {
+        "type" : "object",
+        "properties" : {
+          "organisation" : {
+            "type" : "string",
+            "description" : "Organisation name"
+          },
+          "user" : {
+            "type" : "string",
+            "description" : "User email"
+          },
+          "app" : {
+            "type" : "string",
+            "description" : "App hostname"
+          },
+          "security_control" : {
+            "type" : "string",
+            "description" : "Security control title"
+          },
+          "status" : {
+            "type" : "string",
+            "description" : "Security control status"
+          },
+          "status_changed" : {
+            "type" : "string",
+            "description" : "Status changed date",
+            "format" : "date"
+          },
+          "last_check_in" : {
+            "type" : "string",
+            "description" : "Last check-in date",
+            "format" : "date-time"
+          },
+          "url" : {
+            "type" : "string",
+            "description" : "URL of the app install"
+          }
+        }
+      },
+      "inline_response_200_results" : {
+        "type" : "object",
+        "properties" : {
+          "organisation" : {
+            "type" : "string",
+            "description" : "Organisation name"
+          },
+          "certification" : {
+            "type" : "string",
+            "description" : "Certification title"
+          },
+          "status" : {
+            "type" : "string",
+            "description" : "Certification status"
+          },
+          "expiry_date" : {
+            "type" : "string",
+            "description" : "Expiry date",
+            "format" : "date"
+          }
+        }
+      },
+      "inline_response_200_1" : {
+        "type" : "object",
+        "properties" : {
+          "count" : {
+            "type" : "integer",
+            "description" : "Total number of results"
+          },
+          "next" : {
+            "type" : "string",
+            "description" : "Next page URL",
+            "format" : "uri"
+          },
+          "previous" : {
+            "type" : "string",
+            "description" : "Previous page URL",
+            "format" : "uri"
+          },
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_1_results"
+            }
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "count" : {
+            "type" : "integer",
+            "description" : "Total number of items"
+          },
+          "next" : {
+            "type" : "string",
+            "description" : "URL to the next page of results"
+          },
+          "previous" : {
+            "type" : "string",
+            "description" : "URL to the previous page of results"
+          },
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/inline_response_200_results"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "Oauth2" : {
+        "type" : "oauth2",
+        "flows" : {
+          "clientCredentials" : {
+            "tokenUrl" : "https://app.cybersmart.co.uk/oauth2/token/",
+            "scopes" : { }
+          }
+        }
+      }
+    }
+  },
+  "x-original-swagger-version" : "2.0"
+}

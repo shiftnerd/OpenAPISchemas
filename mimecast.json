@@ -1,0 +1,2210 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Mimecast",
+    "description": "This colleection contains API calls from Tech Connect, Mimecast's public API and integrations site.\n\nFor a full list of available API endpoints, visit: https://mimecast.com/tech-connect/documentation\n\nLast updated 2020-01-20",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/account/get-account": {
+      "post": {
+        "summary": "Get Account",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/account/get-account/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "operationId": "post_api_account_get-account"
+      }
+    },
+    "/api/account/get-support-info": {
+      "post": {
+        "summary": "Get Support Info",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/account/get-support-info/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "operationId": "post_api_account_get-support-info"
+      }
+    },
+    "/api/provisioning/get-packages": {
+      "post": {
+        "summary": "Get Products",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/account/get-products/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "operationId": "post_api_provisioning_get-packages"
+      }
+    },
+    "/api/account/get-dashboard-notifications": {
+      "post": {
+        "summary": "Get Dashboard Notifications",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/account/get-dashboard-notifications/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "operationId": "post_api_account_get-dashboard-notifications"
+      }
+    },
+    "/api/policy/webwhiteurl/create-policy-with-targets": {
+      "post": {
+        "summary": "Create Policy",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/web-security/create-policy/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_webwhiteurl_create-policy-with-targets"
+      }
+    },
+    "/api/policy/webwhiteurl/get-policy-with-targets": {
+      "post": {
+        "summary": "Get Policies",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/web-security/get-policies/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_webwhiteurl_get-policy-with-targets"
+      }
+    },
+    "/api/policy/webwhiteurl/update-policy-with-targets": {
+      "post": {
+        "summary": "Update Policy",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/web-security/update-policy/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_webwhiteurl_update-policy-with-targets"
+      }
+    },
+    "/api/policy/webwhiteurl/delete-policy-with-targets": {
+      "post": {
+        "summary": "Delete Policy",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/web-security/delete-policy/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_webwhiteurl_delete-policy-with-targets"
+      }
+    },
+    "/api/user/update-user": {
+      "post": {
+        "summary": "Update User",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/user/update-user/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_user_update-user"
+      }
+    },
+    "/api/user/update-attributes": {
+      "post": {
+        "summary": "Update Attributes",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/user/update-attributes/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_user_update-attributes"
+      }
+    },
+    "/api/user/update-alias": {
+      "post": {
+        "summary": "Update Alias",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/user/update-alias/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_user_update-alias"
+      }
+    },
+    "/api/user/remove-alias": {
+      "post": {
+        "summary": "Remove Alias",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/user/remove-alias/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_user_remove-alias"
+      }
+    },
+    "/api/user/get-profile": {
+      "post": {
+        "summary": "Get Profile",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/user/get-profile/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_user_get-profile"
+      }
+    },
+    "/api/user/get-most-used-contacts": {
+      "post": {
+        "summary": "Get Most Used Contacts",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/user/get-most-used-contacts/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "operationId": "post_api_user_get-most-used-contacts"
+      }
+    },
+    "/api/user/get-internal-users": {
+      "post": {
+        "summary": "Get Internal Users",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/user/get-internal-users/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_user_get-internal-users"
+      }
+    },
+    "/api/user/remove-delegate-user": {
+      "post": {
+        "summary": "Remove Delegate User",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/user/remove-delegate-user/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_user_remove-delegate-user"
+      }
+    },
+    "/api/user/add-delegate-user": {
+      "post": {
+        "summary": "Add Delegate User",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/user/add-delegate-user/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_user_add-delegate-user"
+      }
+    },
+    "/api/user/find-delegate-users": {
+      "post": {
+        "summary": "Find Delegate Users",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/user/find-delegate-users/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_user_find-delegate-users"
+      }
+    },
+    "/api/user/get-delegated-access": {
+      "post": {
+        "summary": "Get Delegated Access",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/user/get-delegated-access/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "operationId": "post_api_user_get-delegated-access"
+      }
+    },
+    "/api/user/get-attributes": {
+      "post": {
+        "summary": "Get Attributes",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/user/get-attributes/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_user_get-attributes"
+      }
+    },
+    "/api/user/get-aliases": {
+      "post": {
+        "summary": "Get Aliases",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/user/get-aliases/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_user_get-aliases"
+      }
+    },
+    "/api/user/create-user": {
+      "post": {
+        "summary": "Create User",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/user/create-user/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_user_create-user"
+      }
+    },
+    "/api/directory/find-groups": {
+      "post": {
+        "summary": "Find Groups",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/directory/find-groups/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_directory_find-groups"
+      }
+    },
+    "/api/directory/create-group": {
+      "post": {
+        "summary": "Create Group",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/directory/create-group/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_directory_create-group"
+      }
+    },
+    "/api/directory/update-group": {
+      "post": {
+        "summary": "Update Group",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/directory/update-group/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_directory_update-group"
+      }
+    },
+    "/api/directory/get-group-members": {
+      "post": {
+        "summary": "Get Group Members",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/directory/get-group-members/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_directory_get-group-members"
+      }
+    },
+    "/api/directory/add-group-member": {
+      "post": {
+        "summary": "Add Group Member",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/directory/add-group-member/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_directory_add-group-member"
+      }
+    },
+    "/api/directory/remove-group-member": {
+      "post": {
+        "summary": "Remove Group Member Copy",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/directory/remove-group-member/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_directory_remove-group-member"
+      }
+    },
+    "/api/byo-threat-intelligence/create-batch": {
+      "post": {
+        "summary": "Create Batch",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/threat-intel/bring-your-own/create-batch/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_byo-threat-intelligence_create-batch"
+      }
+    },
+    "/api/byo-threat-intelligence/get-batches": {
+      "post": {
+        "summary": "Get Batches",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/threat-intel/bring-your-own/get-batches/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "operationId": "post_api_byo-threat-intelligence_get-batches"
+      }
+    },
+    "/api/byo-threat-intelligence/delete-batch": {
+      "post": {
+        "summary": "Delete Batch",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/threat-intel/bring-your-own/delete-batch/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_byo-threat-intelligence_delete-batch"
+      }
+    },
+    "/api/byo-threat-intelligence/get-quota": {
+      "post": {
+        "summary": "Get Quota",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/threat-intel/bring-your-own/get-quota/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "operationId": "post_api_byo-threat-intelligence_get-quota"
+      }
+    },
+    "/api/ttp/threat-intel/get-feed": {
+      "post": {
+        "summary": "Get Threat Intel Feed",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/threat-intel/get-feed/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_ttp_threat-intel_get-feed"
+      }
+    },
+    "/api/ttp/remediation/search-hash": {
+      "post": {
+        "summary": "Search File Hash",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/threat-intel/search-hash/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_ttp_remediation_search-hash"
+      }
+    },
+    "/api/ttp/remediation/find-incidents": {
+      "post": {
+        "summary": "Find Remediation Incidents",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/threat-intel/find-incidents/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_ttp_remediation_find-incidents"
+      }
+    },
+    "/api/ttp/remediation/get-incident": {
+      "post": {
+        "summary": "Get Remediation Incident",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/threat-intel/get-incident/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_ttp_remediation_get-incident"
+      }
+    },
+    "/api/ttp/remediation/create": {
+      "post": {
+        "summary": "Create Remedation Incident",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/threat-intel/create-incident/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_ttp_remediation_create"
+      }
+    },
+    "/api/archive/search": {
+      "post": {
+        "summary": "Search",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/archive/search/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_archive_search"
+      }
+    },
+    "/api/archive/get-message-part": {
+      "post": {
+        "summary": "Get Message Part",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/archive/get-message-part/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_archive_get-message-part"
+      }
+    },
+    "/api/archive/get-message-list": {
+      "post": {
+        "summary": "Get Message List",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/archive/get-message-list/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_archive_get-message-list"
+      }
+    },
+    "/api/archive/get-message-detail": {
+      "post": {
+        "summary": "Get Message Detail",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/archive/get-message-detail/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_archive_get-message-detail"
+      }
+    },
+    "/api/archive/get-file": {
+      "post": {
+        "summary": "Get File",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/archive/get-file/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_archive_get-file"
+      }
+    },
+    "/api/directory/get-connection": {
+      "post": {
+        "summary": "Get Connection",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/directory-sync/get-connection/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "operationId": "post_api_directory_get-connection"
+      }
+    },
+    "/api/domain/create-domain": {
+      "post": {
+        "summary": "Create Domain",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/domain/create-domain/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_domain_create-domain"
+      }
+    },
+    "/api/domain/get-verification-code": {
+      "post": {
+        "summary": "Get Verification Code",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/domain/get-verification-code/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_domain_get-verification-code"
+      }
+    },
+    "/api/domain/verify-domain": {
+      "post": {
+        "summary": "Verify Domain",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/domain/verify-domain/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_domain_verify-domain"
+      }
+    },
+    "/api/domain/get-provision-status": {
+      "post": {
+        "summary": "Get Provision Status",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/domain/get-provision-status/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_domain_get-provision-status"
+      }
+    },
+    "/api/domain/get-pending-domain": {
+      "post": {
+        "summary": "Get Pending Domain",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/domain/get-pending-domain/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "operationId": "post_api_domain_get-pending-domain"
+      }
+    },
+    "/api/domain/get-internal-domain": {
+      "post": {
+        "summary": "Get Internal Domain",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/domain/get-internal-domain/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "operationId": "post_api_domain_get-internal-domain"
+      }
+    },
+    "/api/domain/delete-pending-domain": {
+      "post": {
+        "summary": "Delete Pending Domain",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/domain/delete-pending-domain/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_domain_delete-pending-domain"
+      }
+    },
+    "/api/file/file-upload": {
+      "post": {
+        "summary": "File Upload",
+        "description": "To use this call, populate the hash and fileSize variables under the Pre-request Script tab.\n\nDocumentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/email/file-upload/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_file_file-upload"
+      }
+    },
+    "/api/email/send-email": {
+      "post": {
+        "summary": "Send Email",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/email/send-email/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_email_send-email"
+      }
+    },
+    "/api/ttp/url/get-logs": {
+      "post": {
+        "summary": "Get TTP URL Logs",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/logs-and-statistics/get-ttp-url-logs/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_ttp_url_get-logs"
+      }
+    },
+    "/api/ttp/impersonation/get-logs": {
+      "post": {
+        "summary": "Get TTP Impersonation Logs",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/logs-and-statistics/get-ttp-impersonation-protect-logs/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_ttp_impersonation_get-logs"
+      }
+    },
+    "/api/ttp/attachment/get-logs": {
+      "post": {
+        "summary": "Get TTP Attachment Logs",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/logs-and-statistics/get-attachment-protection-logs/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_ttp_attachment_get-logs"
+      }
+    },
+    "/api/dlp/get-logs": {
+      "post": {
+        "summary": "Get DLP Logs",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/logs-and-statistics/get-dlp-logs/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_dlp_get-logs"
+      }
+    },
+    "/api/audit/get-siem-logs": {
+      "post": {
+        "summary": "Get SIEM Logs",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/logs-and-statistics/get-siem-logs/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_audit_get-siem-logs"
+      }
+    },
+    "/api/archive/get-view-logs": {
+      "post": {
+        "summary": "Get Archive Message View Logs",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/logs-and-statistics/get-archive-message-view-logs/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_archive_get-view-logs"
+      }
+    },
+    "/api/archive/get-search-logs": {
+      "post": {
+        "summary": "Get Archive Search Logs",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/logs-and-statistics/get-archive-search-logs/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_archive_get-search-logs"
+      }
+    },
+    "/api/audit/get-audit-events": {
+      "post": {
+        "summary": "Get Audit Events",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/logs-and-statistics/get-audit-events/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_audit_get-audit-events"
+      }
+    },
+    "/api/journaling/get-service": {
+      "post": {
+        "summary": "Get Journal Service",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/logs-and-statistics/get-journal-service/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "operationId": "post_api_journaling_get-service"
+      }
+    },
+    "/api/policy/blockedsenders/get-policy": {
+      "post": {
+        "summary": "Get Policy",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/blocked-sender-policy/get-policy/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "operationId": "post_api_policy_blockedsenders_get-policy"
+      }
+    },
+    "/api/policy/blockedsenders/create-policy": {
+      "post": {
+        "summary": "Create Policy",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/blocked-sender-policy/create-policy/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_blockedsenders_create-policy"
+      }
+    },
+    "/api/policy/address-alteration/create-definition": {
+      "post": {
+        "summary": "Create Definition",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/policies/address-alteration/create-definition/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_address-alteration_create-definition"
+      }
+    },
+    "/api/policy/address-alteration/create-policy": {
+      "post": {
+        "summary": "Create Policy",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/policies/address-alteration/create-policy/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_address-alteration_create-policy"
+      }
+    },
+    "/api/policy/address-alteration/create-address-alteration-set": {
+      "post": {
+        "summary": "Create Set",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/policies/address-alteration/create-set/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_address-alteration_create-address-alteration-set"
+      }
+    },
+    "/api/policy/address-alteration/delete-definition": {
+      "post": {
+        "summary": "Delete Definition",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/policies/address-alteration/delete-definition/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_address-alteration_delete-definition"
+      }
+    },
+    "/api/policy/address-alteration/delete-policy": {
+      "post": {
+        "summary": "Delete Policy",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/policies/address-alteration/delete-policy/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_address-alteration_delete-policy"
+      }
+    },
+    "/api/policy/address-alteration/get-definition": {
+      "post": {
+        "summary": "Get Definition",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/policies/address-alteration/get-definition/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_address-alteration_get-definition"
+      }
+    },
+    "/api/policy/address-alteration/get-policy": {
+      "post": {
+        "summary": "Get Policy",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/policies/address-alteration/get-policy/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_address-alteration_get-policy"
+      }
+    },
+    "/api/policy/address-alteration/get-address-alteration-set": {
+      "post": {
+        "summary": "Get Set",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/policies/address-alteration/get-set/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_address-alteration_get-address-alteration-set"
+      }
+    },
+    "/api/policy/address-alteration/update-policy": {
+      "post": {
+        "summary": "Update Policy",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/policies/address-alteration/update-policy/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_address-alteration_update-policy"
+      }
+    },
+    "/api/policy/antispoofing-bypass/create-policy": {
+      "post": {
+        "summary": "Create Policy",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/policies/antispoofing-spf-bypass/create-policy/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_antispoofing-bypass_create-policy"
+      }
+    },
+    "/api/policy/antispoofing-bypass/delete-policy": {
+      "post": {
+        "summary": "Delete Policy",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/policies/antispoofing-spf-bypass/delete-policy/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_antispoofing-bypass_delete-policy"
+      }
+    },
+    "/api/policy/antispoofing-bypass/get-policy": {
+      "post": {
+        "summary": "Get Policy",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/policies/antispoofing-spf-bypass/get-policy/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_antispoofing-bypass_get-policy"
+      }
+    },
+    "/api/policy/antispoofing-bypass/update-policy": {
+      "post": {
+        "summary": "Update Policy",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/policies/antispoofing-spf-bypass/update-policy/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_policy_antispoofing-bypass_update-policy"
+      }
+    },
+    "/api/managedsender/permit-or-block-sender": {
+      "post": {
+        "summary": "Permit or Block Sender",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/managed-sender/permit-or-block-sender/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_managedsender_permit-or-block-sender"
+      }
+    },
+    "/api/message-finder/search": {
+      "post": {
+        "summary": "Search",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/message-finder-formally-tracking/search/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_message-finder_search"
+      }
+    },
+    "/api/message-finder/get-message-info": {
+      "post": {
+        "summary": "Get Message Info",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/message-finder-formally-tracking/get-message-info/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_message-finder_get-message-info"
+      }
+    },
+    "/api/gateway/get-hold-message-list": {
+      "post": {
+        "summary": "Get Message Hold List",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/message-queues/get-hold-message-list/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_gateway_get-hold-message-list"
+      }
+    },
+    "/api/gateway/get-hold-summary-list": {
+      "post": {
+        "summary": "Get Message Hold Summary List",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/message-queues/get-hold-summary-list/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "operationId": "post_api_gateway_get-hold-summary-list"
+      }
+    },
+    "/api/gateway/find-processing-messages": {
+      "post": {
+        "summary": "Find Processing Messages",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/message-queues/find-processsing-messages/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_gateway_find-processing-messages"
+      }
+    },
+    "/api/gateway/hold-reject": {
+      "post": {
+        "summary": "Reject Message",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/message-queues/reject-message/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_gateway_hold-reject"
+      }
+    },
+    "/api/gateway/hold-release": {
+      "post": {
+        "summary": "Release Message",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/message-queues/release-message/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_gateway_hold-release"
+      }
+    },
+    "/api/email/get-email-queues": {
+      "post": {
+        "summary": "Get Email Queues",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/message-queues/inbound-outbound-queues/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_email_get-email-queues"
+      }
+    },
+    "/api/ttp/url/get-all-managed-urls": {
+      "post": {
+        "summary": "Get Managed URL",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/targeted-threat-protection-url-protect/get-managed-url/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_ttp_url_get-all-managed-urls"
+      }
+    },
+    "/api/ttp/url/delete-managed-url": {
+      "post": {
+        "summary": "Delete Managed URL",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/targeted-threat-protection-url-protect/delete-managed-url/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_ttp_url_delete-managed-url"
+      }
+    },
+    "/api/ttp/url/create-managed-url": {
+      "post": {
+        "summary": "Create Managed URL",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/targeted-threat-protection-url-protect/create-managed-url/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_ttp_url_create-managed-url"
+      }
+    },
+    "/api/ttp/url/decode-url": {
+      "post": {
+        "summary": "Decode URL",
+        "description": "Documentation link: https://www.mimecast.com/tech-connect/documentation/endpoint-reference/targeted-threat-protection-url-protect/decode-url/",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-mc-account"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "operationId": "post_api_ttp_url_decode-url"
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "x-mc-account": {
+        "name": "x-mc-account",
+        "in": "header",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

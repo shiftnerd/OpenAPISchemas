@@ -1,0 +1,187 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Intermedia API",
+      "description": "API for Intermedia Unite services including calling and authentication",
+      "version": "1.0.0",
+      "contact": {
+        "name": "Intermedia Support",
+        "url": "https://developer.intermedia.com"
+      }
+    },
+    "servers": [
+      {
+        "url": "https://api.intermedia.net",
+        "description": "Production server"
+      }
+    ],
+    "security": [
+      {
+        "bearerAuth": []
+      }
+    ],
+    "components": {
+      "securitySchemes": {
+        "bearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      },
+      "schemas": {
+        "TokenRequest": {
+          "type": "object",
+          "properties": {
+            "grant_type": {
+              "type": "string",
+              "enum": [
+                "client_credentials"
+              ]
+            },
+            "client_id": {
+              "type": "string"
+            },
+            "client_secret": {
+              "type": "string"
+            },
+            "scope": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "grant_type",
+            "client_id",
+            "client_secret"
+          ]
+        },
+        "TokenResponse": {
+          "type": "object",
+          "properties": {
+            "access_token": {
+              "type": "string"
+            },
+            "token_type": {
+              "type": "string"
+            },
+            "expires_in": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "paths": {
+      "/token": {
+        "post": {
+          "operationId": "getAccessToken",
+          "summary": "Get access token",
+          "description": "Obtain an access token using client credentials",
+          "tags": [
+            "Authentication"
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenRequest"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Successful authentication",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TokenResponse"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid request"
+            },
+            "401": {
+              "description": "Unauthorized"
+            }
+          }
+        }
+      },
+      "/calling/v1/calls": {
+        "post": {
+          "operationId": "makeCall",
+          "summary": "Make a call",
+          "description": "Initiate a new call",
+          "tags": [
+            "Calling"
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "from": {
+                      "type": "string",
+                      "description": "Caller's phone number"
+                    },
+                    "to": {
+                      "type": "string",
+                      "description": "Called party's phone number"
+                    }
+                  },
+                  "required": [
+                    "from",
+                    "to"
+                  ]
+                }
+              }
+            }
+          },
+          "responses": {
+            "202": {
+              "description": "Call initiated successfully"
+            },
+            "400": {
+              "description": "Invalid request"
+            },
+            "401": {
+              "description": "Unauthorized"
+            }
+          }
+        }
+      },
+      "/calling/v1/calls/{callId}": {
+        "get": {
+          "operationId": "getCallDetails",
+          "summary": "Get call details",
+          "description": "Retrieve details of a specific call",
+          "tags": [
+            "Calling"
+          ],
+          "parameters": [
+            {
+              "name": "callId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "description": "ID of the call"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Call details retrieved successfully"
+            },
+            "404": {
+              "description": "Call not found"
+            }
+          }
+        }
+      }
+    }
+  }
