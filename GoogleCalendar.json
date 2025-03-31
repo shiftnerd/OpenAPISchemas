@@ -1,0 +1,1764 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Calendar",
+    "description": "Manipulates events and other calendar data.",
+    "contact": {
+      "name": "Google",
+      "url": "https://google.com"
+    },
+    "version": "v3"
+  },
+  "servers": [
+    {
+      "url": "http://www.googleapis.com/calendar/v3"
+    }
+  ],
+  "paths": {
+    "/calendars": {
+      "post": {
+        "tags": [
+          "Calendar"
+        ],
+        "summary": "Create Calendar",
+        "description": "Creates a secondary calendar",
+        "operationId": "calendar.calendars.insert",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/calendars/{calendarId}": {
+      "get": {
+        "tags": [
+          "Calendar"
+        ],
+        "summary": "Get Calendar",
+        "description": "Returns metadata for a calendar",
+        "operationId": "calendar.calendars.get",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Calendar"
+        ],
+        "summary": "Update Calendar",
+        "description": "Updates metadata for a calendar",
+        "operationId": "calendar.calendars.update",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      },
+      "delete": {
+        "tags": [
+          "Calendar"
+        ],
+        "summary": "CreaDeletete Calendar",
+        "description": "Deletes a secondary calendar",
+        "operationId": "calendar.calendars.delete",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Calendar"
+        ],
+        "summary": "Update Calendar",
+        "description": "Updates metadata for a calendar",
+        "operationId": "calendar.calendars.patch",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/calendars/{calendarId}/acl": {
+      "get": {
+        "tags": [
+          "Calendar ACL"
+        ],
+        "summary": "Get Calendar ACL",
+        "description": "Returns the rules in the access control list for the calendar",
+        "operationId": "calendar.acl.list",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "maxResults",
+            "in": "query",
+            "description": "Maximum number of entries returned on one result page",
+            "schema": {}
+          },
+          {
+            "name": "pageToken",
+            "in": "query",
+            "description": "Token specifying which result page to return",
+            "schema": {}
+          },
+          {
+            "name": "showDeleted",
+            "in": "query",
+            "description": "Whether to include deleted ACLs in the result",
+            "schema": {}
+          },
+          {
+            "name": "syncToken",
+            "in": "query",
+            "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous...",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Calendar ACL"
+        ],
+        "summary": "Create Calendar ACL",
+        "description": "Creates an access control rule",
+        "operationId": "calendar.acl.insert",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/calendars/{calendarId}/acl/watch": {
+      "post": {
+        "tags": [
+          "Calendar ACL"
+        ],
+        "summary": "Watch Calendar ACL",
+        "description": "Watch for changes to ACL resources",
+        "operationId": "calendar.acl.watch",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "maxResults",
+            "in": "query",
+            "description": "Maximum number of entries returned on one result page",
+            "schema": {}
+          },
+          {
+            "name": "pageToken",
+            "in": "query",
+            "description": "Token specifying which result page to return",
+            "schema": {}
+          },
+          {
+            "name": "showDeleted",
+            "in": "query",
+            "description": "Whether to include deleted ACLs in the result",
+            "schema": {}
+          },
+          {
+            "name": "syncToken",
+            "in": "query",
+            "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous...",
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "resource"
+      }
+    },
+    "/calendars/{calendarId}/acl/{ruleId}": {
+      "get": {
+        "tags": [
+          "Calendar ACL"
+        ],
+        "summary": "Get Calendar ACL",
+        "description": "Returns an access control rule",
+        "operationId": "calendar.acl.get",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "ruleId",
+            "in": "path",
+            "description": "ACL rule identifier",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Calendar ACL"
+        ],
+        "summary": "Update Calendar ACL",
+        "description": "Updates an access control rule",
+        "operationId": "calendar.acl.update",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "ruleId",
+            "in": "path",
+            "description": "ACL rule identifier",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      },
+      "delete": {
+        "tags": [
+          "Calendar ACL"
+        ],
+        "summary": "Delete Calendar ACL",
+        "description": "Deletes an access control rule",
+        "operationId": "calendar.acl.delete",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "ruleId",
+            "in": "path",
+            "description": "ACL rule identifier",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Calendar ACL"
+        ],
+        "summary": "Update Calendar ACL",
+        "description": "Updates an access control rule",
+        "operationId": "calendar.acl.patch",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "ruleId",
+            "in": "path",
+            "description": "ACL rule identifier",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/calendars/{calendarId}/clear": {
+      "post": {
+        "tags": [
+          "Calendar"
+        ],
+        "summary": "Clear Primary Calendar",
+        "description": "Clears a primary calendar",
+        "operationId": "calendar.calendars.clear",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/calendars/{calendarId}/events": {
+      "get": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Get Events",
+        "description": "Returns events on the specified calendar",
+        "operationId": "calendar.events.list",
+        "parameters": [
+          {
+            "name": "alwaysIncludeEmail",
+            "in": "query",
+            "description": "Whether to always include a value in the email field for the organizer, creator and attendees, even...",
+            "schema": {}
+          },
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "iCalUID",
+            "in": "query",
+            "description": "Specifies event ID in the iCalendar format to be included in the response",
+            "schema": {}
+          },
+          {
+            "name": "maxAttendees",
+            "in": "query",
+            "description": "The maximum number of attendees to include in the response",
+            "schema": {}
+          },
+          {
+            "name": "maxResults",
+            "in": "query",
+            "description": "Maximum number of events returned on one result page",
+            "schema": {}
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "description": "The order of the events returned in the result",
+            "schema": {}
+          },
+          {
+            "name": "pageToken",
+            "in": "query",
+            "description": "Token specifying which result page to return",
+            "schema": {}
+          },
+          {
+            "name": "privateExtendedProperty",
+            "in": "query",
+            "description": "Extended properties constraint specified as propertyName=value",
+            "schema": {}
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Free text search terms to find events that match these terms in any field, except for extended...",
+            "schema": {}
+          },
+          {
+            "name": "sharedExtendedProperty",
+            "in": "query",
+            "description": "Extended properties constraint specified as propertyName=value",
+            "schema": {}
+          },
+          {
+            "name": "showDeleted",
+            "in": "query",
+            "description": "Whether to include deleted events (with status equals \"cancelled\") in the result",
+            "schema": {}
+          },
+          {
+            "name": "showHiddenInvitations",
+            "in": "query",
+            "description": "Whether to include hidden invitations in the result",
+            "schema": {}
+          },
+          {
+            "name": "singleEvents",
+            "in": "query",
+            "description": "Whether to expand recurring events into instances and only return single one-off events and...",
+            "schema": {}
+          },
+          {
+            "name": "syncToken",
+            "in": "query",
+            "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous...",
+            "schema": {}
+          },
+          {
+            "name": "timeMax",
+            "in": "query",
+            "description": "Upper bound (exclusive) for an event's start time to filter by",
+            "schema": {}
+          },
+          {
+            "name": "timeMin",
+            "in": "query",
+            "description": "Lower bound (inclusive) for an event's end time to filter by",
+            "schema": {}
+          },
+          {
+            "name": "timeZone",
+            "in": "query",
+            "description": "Time zone used in the response",
+            "schema": {}
+          },
+          {
+            "name": "updatedMin",
+            "in": "query",
+            "description": "Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Create Event",
+        "description": "Creates an event",
+        "operationId": "calendar.events.insert",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "maxAttendees",
+            "in": "query",
+            "description": "The maximum number of attendees to include in the response",
+            "schema": {}
+          },
+          {
+            "name": "sendNotifications",
+            "in": "query",
+            "description": "Whether to send notifications about the creation of the new event",
+            "schema": {}
+          },
+          {
+            "name": "supportsAttachments",
+            "in": "query",
+            "description": "Whether API client performing operation supports event attachments",
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/calendars/{calendarId}/events/import": {
+      "post": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Import Event",
+        "description": "Imports an event",
+        "operationId": "calendar.events.import",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "supportsAttachments",
+            "in": "query",
+            "description": "Whether API client performing operation supports event attachments",
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/calendars/{calendarId}/events/quickAdd": {
+      "post": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Create Event",
+        "description": "Creates an event based on a simple text string",
+        "operationId": "calendar.events.quickAdd",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "sendNotifications",
+            "in": "query",
+            "description": "Whether to send notifications about the creation of the event",
+            "schema": {}
+          },
+          {
+            "name": "text",
+            "in": "query",
+            "description": "The text describing the event to be created",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/calendars/{calendarId}/events/watch": {
+      "post": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Watch Event",
+        "description": "Watch for changes to Events resources",
+        "operationId": "calendar.events.watch",
+        "parameters": [
+          {
+            "name": "alwaysIncludeEmail",
+            "in": "query",
+            "description": "Whether to always include a value in the email field for the organizer, creator and attendees, even...",
+            "schema": {}
+          },
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "iCalUID",
+            "in": "query",
+            "description": "Specifies event ID in the iCalendar format to be included in the response",
+            "schema": {}
+          },
+          {
+            "name": "maxAttendees",
+            "in": "query",
+            "description": "The maximum number of attendees to include in the response",
+            "schema": {}
+          },
+          {
+            "name": "maxResults",
+            "in": "query",
+            "description": "Maximum number of events returned on one result page",
+            "schema": {}
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "description": "The order of the events returned in the result",
+            "schema": {}
+          },
+          {
+            "name": "pageToken",
+            "in": "query",
+            "description": "Token specifying which result page to return",
+            "schema": {}
+          },
+          {
+            "name": "privateExtendedProperty",
+            "in": "query",
+            "description": "Extended properties constraint specified as propertyName=value",
+            "schema": {}
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Free text search terms to find events that match these terms in any field, except for extended...",
+            "schema": {}
+          },
+          {
+            "name": "sharedExtendedProperty",
+            "in": "query",
+            "description": "Extended properties constraint specified as propertyName=value",
+            "schema": {}
+          },
+          {
+            "name": "showDeleted",
+            "in": "query",
+            "description": "Whether to include deleted events (with status equals \"cancelled\") in the result",
+            "schema": {}
+          },
+          {
+            "name": "showHiddenInvitations",
+            "in": "query",
+            "description": "Whether to include hidden invitations in the result",
+            "schema": {}
+          },
+          {
+            "name": "singleEvents",
+            "in": "query",
+            "description": "Whether to expand recurring events into instances and only return single one-off events and...",
+            "schema": {}
+          },
+          {
+            "name": "syncToken",
+            "in": "query",
+            "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous...",
+            "schema": {}
+          },
+          {
+            "name": "timeMax",
+            "in": "query",
+            "description": "Upper bound (exclusive) for an event's start time to filter by",
+            "schema": {}
+          },
+          {
+            "name": "timeMin",
+            "in": "query",
+            "description": "Lower bound (inclusive) for an event's end time to filter by",
+            "schema": {}
+          },
+          {
+            "name": "timeZone",
+            "in": "query",
+            "description": "Time zone used in the response",
+            "schema": {}
+          },
+          {
+            "name": "updatedMin",
+            "in": "query",
+            "description": "Lower bound for an event's last modification time (as a RFC3339 timestamp) to filter by",
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "resource"
+      }
+    },
+    "/calendars/{calendarId}/events/{eventId}": {
+      "get": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Get Event",
+        "description": "Returns an event",
+        "operationId": "calendar.events.get",
+        "parameters": [
+          {
+            "name": "alwaysIncludeEmail",
+            "in": "query",
+            "description": "Whether to always include a value in the email field for the organizer, creator and attendees, even...",
+            "schema": {}
+          },
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "eventId",
+            "in": "path",
+            "description": "Event identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "maxAttendees",
+            "in": "query",
+            "description": "The maximum number of attendees to include in the response",
+            "schema": {}
+          },
+          {
+            "name": "timeZone",
+            "in": "query",
+            "description": "Time zone used in the response",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Update Event",
+        "description": "Updates an event",
+        "operationId": "calendar.events.update",
+        "parameters": [
+          {
+            "name": "alwaysIncludeEmail",
+            "in": "query",
+            "description": "Whether to always include a value in the email field for the organizer, creator and attendees, even...",
+            "schema": {}
+          },
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "eventId",
+            "in": "path",
+            "description": "Event identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "maxAttendees",
+            "in": "query",
+            "description": "The maximum number of attendees to include in the response",
+            "schema": {}
+          },
+          {
+            "name": "sendNotifications",
+            "in": "query",
+            "description": "Whether to send notifications about the event update (e",
+            "schema": {}
+          },
+          {
+            "name": "supportsAttachments",
+            "in": "query",
+            "description": "Whether API client performing operation supports event attachments",
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      },
+      "delete": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Delete Event",
+        "description": "Deletes an event",
+        "operationId": "calendar.events.delete",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "eventId",
+            "in": "path",
+            "description": "Event identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "sendNotifications",
+            "in": "query",
+            "description": "Whether to send notifications about the deletion of the event",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Update Event",
+        "description": "Updates an event",
+        "operationId": "calendar.events.patch",
+        "parameters": [
+          {
+            "name": "alwaysIncludeEmail",
+            "in": "query",
+            "description": "Whether to always include a value in the email field for the organizer, creator and attendees, even...",
+            "schema": {}
+          },
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "eventId",
+            "in": "path",
+            "description": "Event identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "maxAttendees",
+            "in": "query",
+            "description": "The maximum number of attendees to include in the response",
+            "schema": {}
+          },
+          {
+            "name": "sendNotifications",
+            "in": "query",
+            "description": "Whether to send notifications about the event update (e",
+            "schema": {}
+          },
+          {
+            "name": "supportsAttachments",
+            "in": "query",
+            "description": "Whether API client performing operation supports event attachments",
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/calendars/{calendarId}/events/{eventId}/instances": {
+      "get": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Get Event Instance",
+        "description": "Returns instances of the specified recurring event",
+        "operationId": "calendar.events.instances",
+        "parameters": [
+          {
+            "name": "alwaysIncludeEmail",
+            "in": "query",
+            "description": "Whether to always include a value in the email field for the organizer, creator and attendees, even...",
+            "schema": {}
+          },
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "eventId",
+            "in": "path",
+            "description": "Recurring event identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "maxAttendees",
+            "in": "query",
+            "description": "The maximum number of attendees to include in the response",
+            "schema": {}
+          },
+          {
+            "name": "maxResults",
+            "in": "query",
+            "description": "Maximum number of events returned on one result page",
+            "schema": {}
+          },
+          {
+            "name": "originalStart",
+            "in": "query",
+            "description": "The original start time of the instance in the result",
+            "schema": {}
+          },
+          {
+            "name": "pageToken",
+            "in": "query",
+            "description": "Token specifying which result page to return",
+            "schema": {}
+          },
+          {
+            "name": "showDeleted",
+            "in": "query",
+            "description": "Whether to include deleted events (with status equals \"cancelled\") in the result",
+            "schema": {}
+          },
+          {
+            "name": "timeMax",
+            "in": "query",
+            "description": "Upper bound (exclusive) for an event's start time to filter by",
+            "schema": {}
+          },
+          {
+            "name": "timeMin",
+            "in": "query",
+            "description": "Lower bound (inclusive) for an event's end time to filter by",
+            "schema": {}
+          },
+          {
+            "name": "timeZone",
+            "in": "query",
+            "description": "Time zone used in the response",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/calendars/{calendarId}/events/{eventId}/move": {
+      "post": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Move Event",
+        "description": "Moves an event to another calendar, i",
+        "operationId": "calendar.events.move",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier of the source calendar where the event currently is on",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "destination",
+            "in": "query",
+            "description": "Calendar identifier of the target calendar where the event is to be moved to",
+            "schema": {}
+          },
+          {
+            "name": "eventId",
+            "in": "path",
+            "description": "Event identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "sendNotifications",
+            "in": "query",
+            "description": "Whether to send notifications about the change of the event's organizer",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/channels/stop": {
+      "post": {
+        "tags": [
+          "Watch"
+        ],
+        "summary": "Stop Watching Resource",
+        "description": "Stop watching resources through this channel",
+        "operationId": "calendar.channels.stop",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "resource"
+      }
+    },
+    "/colors": {
+      "get": {
+        "tags": [
+          "Color"
+        ],
+        "summary": "Get Colors",
+        "description": "Returns the color definitions for calendars and events",
+        "operationId": "calendar.colors.get",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/freeBusy": {
+      "post": {
+        "tags": [
+          "Free/Busy"
+        ],
+        "summary": "Return Free/Busy Information",
+        "description": "Returns free/busy information for a set of calendars",
+        "operationId": "calendar.freebusy.query",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/users/me/calendarList": {
+      "get": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Return Entries",
+        "description": "Returns entries on the user's calendar list",
+        "operationId": "calendar.calendarList.list",
+        "parameters": [
+          {
+            "name": "maxResults",
+            "in": "query",
+            "description": "Maximum number of entries returned on one result page",
+            "schema": {}
+          },
+          {
+            "name": "minAccessRole",
+            "in": "query",
+            "description": "The minimum access role for the user in the returned entries",
+            "schema": {}
+          },
+          {
+            "name": "pageToken",
+            "in": "query",
+            "description": "Token specifying which result page to return",
+            "schema": {}
+          },
+          {
+            "name": "showDeleted",
+            "in": "query",
+            "description": "Whether to include deleted calendar list entries in the result",
+            "schema": {}
+          },
+          {
+            "name": "showHidden",
+            "in": "query",
+            "description": "Whether to show hidden entries",
+            "schema": {}
+          },
+          {
+            "name": "syncToken",
+            "in": "query",
+            "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous...",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Add Entry",
+        "description": "Adds an entry to the user's calendar list",
+        "operationId": "calendar.calendarList.insert",
+        "parameters": [
+          {
+            "name": "colorRgbFormat",
+            "in": "query",
+            "description": "Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB)",
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/users/me/calendarList/watch": {
+      "post": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Watch Entry",
+        "description": "Watch for changes to CalendarList resources",
+        "operationId": "calendar.calendarList.watch",
+        "parameters": [
+          {
+            "name": "maxResults",
+            "in": "query",
+            "description": "Maximum number of entries returned on one result page",
+            "schema": {}
+          },
+          {
+            "name": "minAccessRole",
+            "in": "query",
+            "description": "The minimum access role for the user in the returned entries",
+            "schema": {}
+          },
+          {
+            "name": "pageToken",
+            "in": "query",
+            "description": "Token specifying which result page to return",
+            "schema": {}
+          },
+          {
+            "name": "showDeleted",
+            "in": "query",
+            "description": "Whether to include deleted calendar list entries in the result",
+            "schema": {}
+          },
+          {
+            "name": "showHidden",
+            "in": "query",
+            "description": "Whether to show hidden entries",
+            "schema": {}
+          },
+          {
+            "name": "syncToken",
+            "in": "query",
+            "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous...",
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "resource"
+      }
+    },
+    "/users/me/calendarList/{calendarId}": {
+      "get": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Get Entry",
+        "description": "Returns an entry on the user's calendar list",
+        "operationId": "calendar.calendarList.get",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Update Entry",
+        "description": "Updates an entry on the user's calendar list",
+        "operationId": "calendar.calendarList.update",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "colorRgbFormat",
+            "in": "query",
+            "description": "Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB)",
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      },
+      "delete": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Delete Entry",
+        "description": "Deletes an entry on the user's calendar list",
+        "operationId": "calendar.calendarList.delete",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Update Entry",
+        "description": "Updates an entry on the user's calendar list",
+        "operationId": "calendar.calendarList.patch",
+        "parameters": [
+          {
+            "name": "calendarId",
+            "in": "path",
+            "description": "Calendar identifier",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "colorRgbFormat",
+            "in": "query",
+            "description": "Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB)",
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+    "/users/me/settings": {
+      "get": {
+        "tags": [
+          "Setting"
+        ],
+        "summary": "Get Settings",
+        "description": "Returns all user settings for the authenticated user",
+        "operationId": "calendar.settings.list",
+        "parameters": [
+          {
+            "name": "maxResults",
+            "in": "query",
+            "description": "Maximum number of entries returned on one result page",
+            "schema": {}
+          },
+          {
+            "name": "pageToken",
+            "in": "query",
+            "description": "Token specifying which result page to return",
+            "schema": {}
+          },
+          {
+            "name": "syncToken",
+            "in": "query",
+            "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous...",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/users/me/settings/watch": {
+      "post": {
+        "tags": [
+          "Setting"
+        ],
+        "summary": "Watch Settings",
+        "description": "Watch for changes to Settings resources",
+        "operationId": "calendar.settings.watch",
+        "parameters": [
+          {
+            "name": "maxResults",
+            "in": "query",
+            "description": "Maximum number of entries returned on one result page",
+            "schema": {}
+          },
+          {
+            "name": "pageToken",
+            "in": "query",
+            "description": "Token specifying which result page to return",
+            "schema": {}
+          },
+          {
+            "name": "syncToken",
+            "in": "query",
+            "description": "Token obtained from the nextSyncToken field returned on the last page of results from the previous...",
+            "schema": {}
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/holder"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "resource"
+      }
+    },
+    "/users/me/settings/{setting}": {
+      "get": {
+        "tags": [
+          "Setting"
+        ],
+        "summary": "Get Setting",
+        "description": "Returns a single user setting",
+        "operationId": "calendar.settings.get",
+        "parameters": [
+          {
+            "name": "setting",
+            "in": "path",
+            "description": "The id of the user setting",
+            "required": true,
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Acl": {
+        "type": "object"
+      },
+      "AclRule": {
+        "type": "object"
+      },
+      "Calendar": {
+        "type": "object"
+      },
+      "CalendarList": {
+        "type": "object"
+      },
+      "CalendarListEntry": {
+        "type": "object"
+      },
+      "CalendarNotification": {
+        "type": "object"
+      },
+      "Channel": {
+        "type": "object"
+      },
+      "ColorDefinition": {
+        "type": "object"
+      },
+      "Colors": {
+        "type": "object"
+      },
+      "Error": {
+        "type": "object"
+      },
+      "Event": {
+        "type": "object"
+      },
+      "EventAttachment": {
+        "type": "object"
+      },
+      "EventAttendee": {
+        "type": "object"
+      },
+      "EventDateTime": {
+        "type": "object"
+      },
+      "EventReminder": {
+        "type": "object"
+      },
+      "Events": {
+        "type": "object"
+      },
+      "FreeBusyCalendar": {
+        "type": "object"
+      },
+      "FreeBusyGroup": {
+        "type": "object"
+      },
+      "FreeBusyRequest": {
+        "type": "object"
+      },
+      "FreeBusyRequestItem": {
+        "type": "object"
+      },
+      "FreeBusyResponse": {
+        "type": "object"
+      },
+      "Setting": {
+        "type": "object"
+      },
+      "Settings": {
+        "type": "object"
+      },
+      "TimePeriod": {
+        "type": "object"
+      },
+      "holder": {
+        "type": "object",
+        "properties": {},
+        "description": "Auto-generated stub for missing schema reference"
+      }
+    },
+    "responses": {},
+    "parameters": {},
+    "examples": {},
+    "requestBodies": {},
+    "headers": {},
+    "securitySchemes": {},
+    "links": {},
+    "callbacks": {}
+  },
+  "x-original-swagger-version": "2.0"
+}
