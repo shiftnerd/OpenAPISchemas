@@ -1,0 +1,5608 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "MBSAPI2.0",
+    "version": "v2",
+    "description": "MSPBackup API",
+    "x-logo": {
+      "url": ""
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.mspbackups.com/"
+    }
+  ],
+  "paths": {
+    "/api/Accounts": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProviderAccountsModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProviderAccountsModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProviderAccountsModel"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProviderAccountsModel"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Accounts_Get",
+        "summary": "Account List"
+      },
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditAccount"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditAccount"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/EditAccount"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/EditAccount"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/EditAccount"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Accounts"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Accounts_EditAccount",
+        "summary": "Edit account",
+        "x-codegen-request-body-name": "account"
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Account"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Account"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Account"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Account"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Account"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Accounts"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Accounts_AddAccount",
+        "summary": "Add account",
+        "x-codegen-request-body-name": "account"
+      }
+    },
+    "/api/Accounts/{id}": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Account unique identifier",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountsModels"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountsModels"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountsModels"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountsModels"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Accounts_GetID",
+        "summary": "Get Account by account ID"
+      }
+    },
+    "/api/Accounts/AddDestination": {
+      "post": {
+        "requestBody": {
+          "description": "Structure of destination",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationOfAccountCreate"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationOfAccountCreate"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationOfAccountCreate"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationOfAccountCreate"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationOfAccountCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Accounts"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DestinationOfAccount"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DestinationOfAccount"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DestinationOfAccount"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DestinationOfAccount"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Accounts_AddDestinationAccount",
+        "summary": "Add existing destination to account",
+        "x-codegen-request-body-name": "destination"
+      }
+    },
+    "/api/Accounts/CreateDestination": {
+      "post": {
+        "requestBody": {
+          "description": "Structure of account destination",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountDestinationCreateModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountDestinationCreateModel"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountDestinationCreateModel"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountDestinationCreateModel"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountDestinationCreateModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Accounts"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DestinationOfAccount"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DestinationOfAccount"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DestinationOfAccount"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DestinationOfAccount"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Accounts_CreateAccountDestination",
+        "summary": "Create a destination bucket for existing storage accounts",
+        "x-codegen-request-body-name": "destination"
+      }
+    },
+    "/api/Accounts/EditDestination": {
+      "put": {
+        "requestBody": {
+          "description": "Storage account destination model",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationOfAccount"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationOfAccount"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationOfAccount"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationOfAccount"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationOfAccount"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Accounts"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Accounts_EditDestinationAccount",
+        "summary": "Edit storage account destination",
+        "x-codegen-request-body-name": "destination"
+      }
+    },
+    "/api/Accounts/RemoveDestination": {
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationOfAccount"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationOfAccount"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationOfAccount"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationOfAccount"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/DestinationOfAccount"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Accounts"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Accounts_RemoveDestinationAccount",
+        "summary": "Remove destination from account",
+        "x-codegen-request-body-name": "destination"
+      }
+    },
+    "/api/Administrators": {
+      "get": {
+        "tags": [
+          "Administrators"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AdministratorsModels"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AdministratorsModels"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AdministratorsModels"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AdministratorsModels"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Administrators_Get",
+        "summary": "Get Administrators List"
+      },
+      "put": {
+        "requestBody": {
+          "description": "User Edit properties structure",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdministratorsEditModels"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdministratorsEditModels"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AdministratorsEditModels"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AdministratorsEditModels"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/AdministratorsEditModels"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Administrators"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Administrators_Put",
+        "summary": "Updates administrator properties to new values.",
+        "x-codegen-request-body-name": "administrator"
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdministratorsNewModels"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdministratorsNewModels"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AdministratorsNewModels"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AdministratorsNewModels"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/AdministratorsNewModels"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Administrators"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Administrators_Post",
+        "summary": "Create administrator",
+        "x-codegen-request-body-name": "administrator"
+      }
+    },
+    "/api/Administrators/{id}": {
+      "get": {
+        "tags": [
+          "Administrators"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Administrators unique identifier",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdministratorsModels"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdministratorsModels"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdministratorsModels"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdministratorsModels"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Administrators_GetID",
+        "summary": "Get administrator by administrator ID"
+      },
+      "delete": {
+        "tags": [
+          "Administrators"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Administrators_Delete",
+        "summary": "Deletes specified administrators"
+      }
+    },
+    "/api/Billing": {
+      "get": {
+        "tags": [
+          "Billing"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingModels"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingModels"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingModels"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingModels"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Billing_Get",
+        "summary": "Get Billing information for current month"
+      },
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterTotalModels"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterTotalModels"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterTotalModels"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterTotalModels"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterTotalModels"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Billing"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingModels"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingModels"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingModels"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/BillingModels"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Billing_Put",
+        "summary": "Get Filtered Billing records",
+        "x-codegen-request-body-name": "filter"
+      }
+    },
+    "/api/Billing/Details": {
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterDetailModels"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterDetailModels"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterDetailModels"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterDetailModels"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterDetailModels"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Billing"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetailModels"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetailModels"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetailModels"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetailModels"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Billing_Details",
+        "summary": "Details Backup/Restore",
+        "x-codegen-request-body-name": "filter"
+      }
+    },
+    "/api/Builds": {
+      "get": {
+        "tags": [
+          "Builds"
+        ],
+        "parameters": [
+          {
+            "name": "companyId",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "in": "query"
+          },
+          {
+            "name": "includeSandbox",
+            "schema": {
+              "type": "boolean"
+            },
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuildModels"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuildModels"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuildModels"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuildModels"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Builds_Get",
+        "summary": "Returns a list of build structures that are available to users"
+      }
+    },
+    "/api/Builds/RequestCustomBuilds": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestBuilds"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestBuilds"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestBuilds"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestBuilds"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestBuilds"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Builds"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Builds_RequestCustomBuilds",
+        "summary": "Request cutstom builds with specified editions",
+        "x-codegen-request-body-name": "request"
+      }
+    },
+    "/api/Builds/AvailableVersions": {
+      "get": {
+        "tags": [
+          "Builds"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuildEditionModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuildEditionModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuildEditionModel"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BuildEditionModel"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Builds_RequestLatestAvailableVersions",
+        "summary": "Returns the latest available versions of builds"
+      }
+    },
+    "/api/apps/domains": {
+      "get": {
+        "tags": [
+          "CloudBackup"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DomainModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DomainModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DomainModel"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DomainModel"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "CloudBackup_GetDomains",
+        "summary": "Get CloudBackup information about domains"
+      }
+    },
+    "/api/Companies": {
+      "get": {
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CompanyModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CompanyModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CompanyModel"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CompanyModel"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Companies_GetList",
+        "summary": "Get companies list"
+      },
+      "put": {
+        "requestBody": {
+          "description": "Company data to update",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyModel"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyModel"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyModel"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Companies_Update",
+        "summary": "Update company data",
+        "x-codegen-request-body-name": "company"
+      },
+      "post": {
+        "requestBody": {
+          "description": "Company",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyCreateModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyCreateModel"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyCreateModel"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyCreateModel"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyCreateModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Companies_Create",
+        "summary": "Create new company",
+        "x-codegen-request-body-name": "company"
+      }
+    },
+    "/api/Companies/{id}": {
+      "get": {
+        "tags": [
+          "Companies"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Company ID",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyModel"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyModel"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Companies_Get",
+        "summary": "Get company by ID"
+      },
+      "delete": {
+        "tags": [
+          "Companies"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "company Id",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Companies_Delete",
+        "summary": "Delete provider company by ID"
+      }
+    },
+    "/api/Computers/{offset}/{count}": {
+      "get": {
+        "tags": [
+          "Computers"
+        ],
+        "parameters": [
+          {
+            "name": "offset",
+            "description": "The offset parameter defines the number of computers (endpoints) to skip before beginning the...",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            },
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "count",
+            "description": "Number of computers (endpoints) to retrieve",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Computers_Get",
+        "summary": "Retrieves a list of managed computers (endpoints) by provided parameters"
+      }
+    },
+    "/api/Computers/{hid}": {
+      "get": {
+        "tags": [
+          "Computers"
+        ],
+        "parameters": [
+          {
+            "name": "hid",
+            "description": "HID of computer",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Computers_GetInfo",
+        "summary": "Retrieves a computer info by computer HID"
+      }
+    },
+    "/api/Computers/{hid}/Disks": {
+      "get": {
+        "tags": [
+          "Computers"
+        ],
+        "parameters": [
+          {
+            "name": "hid",
+            "description": "HID of computer",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "profile",
+            "description": "Profile",
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": true
+          },
+          {
+            "name": "isOffline",
+            "description": "Depending on computer status: if true, the data will be retrieved from settings service, if false,...",
+            "schema": {
+              "type": "boolean"
+            },
+            "in": "query",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Computers_GetDisks",
+        "summary": "Retrieves information about disks of computer by computer HID"
+      }
+    },
+    "/api/Computers/{hid}/Plans": {
+      "get": {
+        "tags": [
+          "Computers"
+        ],
+        "parameters": [
+          {
+            "name": "hid",
+            "description": "HID of computer",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Computers_ListPlans",
+        "summary": "Retrieves information about backup/restore plans on a computer (endpoint) by the computer HID"
+      }
+    },
+    "/api/Computers/{hid}/authorization": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorizeComputerRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorizeComputerRequest"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorizeComputerRequest"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorizeComputerRequest"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorizeComputerRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Computers"
+        ],
+        "parameters": [
+          {
+            "name": "hid",
+            "description": "HID of endpoint",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Computers_AuthorizeComputer",
+        "summary": "Creates/updates authorization for endpoints which are currently online by specified HID",
+        "x-codegen-request-body-name": "request"
+      },
+      "delete": {
+        "tags": [
+          "Computers"
+        ],
+        "parameters": [
+          {
+            "name": "hid",
+            "description": "HID of endpoint",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Computers_DeleteComputerAuthorization",
+        "summary": "Removes authorization from a computer by the computer HID"
+      }
+    },
+    "/api/Destinations": {
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUserDestination"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUserDestination"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUserDestination"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUserDestination"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUserDestination"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Destinations"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Destinations_Put",
+        "summary": "Edit destination of user",
+        "x-codegen-request-body-name": "editDestination"
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddUserDestination"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddUserDestination"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AddUserDestination"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/AddUserDestination"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/AddUserDestination"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Destinations"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDestinationsModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDestinationsModel"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDestinationsModel"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDestinationsModel"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Destinations_Post",
+        "summary": "Add destination to user",
+        "x-codegen-request-body-name": "addDestination"
+      }
+    },
+    "/api/Destinations/{userEmail}": {
+      "get": {
+        "tags": [
+          "Destinations"
+        ],
+        "parameters": [
+          {
+            "name": "userEmail",
+            "description": "User login(email)",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserDestinationsModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserDestinationsModel"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserDestinationsModel"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserDestinationsModel"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Destinations_GetUser_email",
+        "summary": "Destinations of User"
+      }
+    },
+    "/api/Licenses": {
+      "get": {
+        "tags": [
+          "Licenses"
+        ],
+        "parameters": [
+          {
+            "name": "isAvailable",
+            "description": "Only available license",
+            "schema": {
+              "type": "boolean"
+            },
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LicensesModels"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LicensesModels"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LicensesModels"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LicensesModels"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Licenses_Get_LicenseStructures",
+        "summary": "Returns a list of license structures"
+      }
+    },
+    "/api/Licenses/{id}": {
+      "get": {
+        "tags": [
+          "Licenses"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "License unique identifier",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LicensesModels"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LicensesModels"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/LicensesModels"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/LicensesModels"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Licenses_Get",
+        "summary": "Returns license structures"
+      }
+    },
+    "/api/Licenses/Grant": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenseOperation"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenseOperation"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenseOperation"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenseOperation"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenseOperation"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Licenses"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Licenses_Grant",
+        "summary": "Grant available licenses for existing user",
+        "x-codegen-request-body-name": "grantLicense"
+      }
+    },
+    "/api/Licenses/Release": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenseOperation"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenseOperation"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenseOperation"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenseOperation"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenseOperation"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Licenses"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Licenses_Release",
+        "summary": "Release license (remove license from a user)",
+        "x-codegen-request-body-name": "releaseLicense"
+      }
+    },
+    "/api/Licenses/Revoke": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenseOperation"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenseOperation"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenseOperation"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenseOperation"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/LicenseOperation"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Licenses"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Licenses_Revoke",
+        "summary": "Revoke license (release info about computer)",
+        "x-codegen-request-body-name": "revokeLicense"
+      }
+    },
+    "/api/Monitoring": {
+      "get": {
+        "tags": [
+          "Monitoring"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MonitoringModels"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MonitoringModels"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MonitoringModels"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MonitoringModels"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Monitoring_Get_Allusers",
+        "summary": "Returns status data for latest runs for endpoints (all users)"
+      }
+    },
+    "/api/Monitoring/{userId}": {
+      "get": {
+        "tags": [
+          "Monitoring"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "description": "Existing user id",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MonitoringModels"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MonitoringModels"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MonitoringModels"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MonitoringModels"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Monitoring_Get",
+        "summary": "Get monitoring records of user"
+      }
+    },
+    "/api/Packages": {
+      "get": {
+        "tags": [
+          "Packages"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PackagesModels"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PackagesModels"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PackagesModels"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PackagesModels"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Packages_Get",
+        "summary": "Get a list of package structures that are available to users"
+      },
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PackagesModels"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PackagesModels"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/PackagesModels"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/PackagesModels"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/PackagesModels"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Packages"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Packages_Put",
+        "summary": "Edit package",
+        "x-codegen-request-body-name": "package"
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PackageCreate"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PackageCreate"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/PackageCreate"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/PackageCreate"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/PackageCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Packages"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Packages_CreateNewStorageLimit",
+        "summary": "Create new package",
+        "x-codegen-request-body-name": "package"
+      }
+    },
+    "/api/Packages/{id}": {
+      "get": {
+        "tags": [
+          "Packages"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Package unique identifier",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PackagesModels"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PackagesModels"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/PackagesModels"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/PackagesModels"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Packages_Get_ID",
+        "summary": "Get a package structures by packages id"
+      },
+      "delete": {
+        "tags": [
+          "Packages"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Packages_Delete",
+        "summary": "Remove package"
+      }
+    },
+    "/api/Provider/Login": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUserBindingModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUserBindingModel"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUserBindingModel"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUserBindingModel"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUserBindingModel"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Provider"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Provider_LoginUser",
+        "summary": "Cloudberry API authentication information. Cloudberry provides the authentication parameters to customer",
+        "x-codegen-request-body-name": "model"
+      }
+    },
+    "/api/Users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UsersModels"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UsersModels"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UsersModels"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UsersModels"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Users_Get_list",
+        "summary": "Get User List"
+      },
+      "put": {
+        "requestBody": {
+          "description": "User Edit properties structure",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsersEditModels"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsersEditModels"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/UsersEditModels"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/UsersEditModels"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/UsersEditModels"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Users_Put",
+        "summary": "Updates user properties to new values.",
+        "x-codegen-request-body-name": "user"
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsersAddModels"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsersAddModels"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/UsersAddModels"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/UsersAddModels"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/UsersAddModels"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Users_Post",
+        "summary": "Create User",
+        "x-codegen-request-body-name": "user"
+      }
+    },
+    "/api/Users/{id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "User unique identifier",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersModels"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersModels"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersModels"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersModels"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Users_Get",
+        "summary": "Get User by user ID"
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "User unique identifier",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Users_DeleteAllUserData",
+        "summary": "Deletes specified user and all user-related information. Data will be deleted during the day."
+      }
+    },
+    "/api/Users/Authenticate": {
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserAuthData"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserAuthData"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/UserAuthData"
+              }
+            },
+            "text/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/UserAuthData"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/UserAuthData"
+              }
+            }
+          },
+          "required": true
+        },
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersModels"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersModels"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersModels"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersModels"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Users_Authenticate",
+        "summary": "Get User by user login and password",
+        "x-codegen-request-body-name": "data"
+      }
+    },
+    "/api/Users/{id}/Account": {
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "User unique identifier",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Users_DeleteAccount",
+        "summary": "Drop user account only. Cloud storage data will not be deleted"
+      }
+    },
+    "/api/Users/{userid}/Computers": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "userid",
+            "schema": {
+              "type": "string"
+            },
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserComputerData"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserComputerData"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserComputerData"
+                  }
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserComputerData"
+                  }
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "operationId": "Users_GetUserComputers",
+        "summary": "Get User Computers"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ProviderAccountsModel": {
+        "description": "provider account model",
+        "type": "object",
+        "properties": {
+          "ResellerAccountID": {
+            "format": "uuid",
+            "description": "Reseller storage account unique identifier",
+            "type": "string"
+          },
+          "AccountID": {
+            "description": "Account unique identifier",
+            "type": "string"
+          },
+          "DateCreated": {
+            "format": "date-time",
+            "description": "Date Created",
+            "type": "string"
+          },
+          "DisplayName": {
+            "description": "Display Name",
+            "type": "string"
+          },
+          "StorageType": {
+            "description": "Storage Type",
+            "type": "string"
+          },
+          "Destinations": {
+            "description": "Destination List",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DestinationOfAccount"
+            }
+          }
+        }
+      },
+      "DestinationOfAccount": {
+        "description": "Storage account destination model",
+        "required": [
+          "AccountID",
+          "Destination",
+          "DestinationID"
+        ],
+        "type": "object",
+        "properties": {
+          "DestinationID": {
+            "format": "uuid",
+            "description": "Destination ID",
+            "type": "string"
+          },
+          "AccountID": {
+            "format": "uuid",
+            "description": "Storage account ID",
+            "type": "string"
+          },
+          "Destination": {
+            "description": "Destination name",
+            "type": "string"
+          },
+          "DestinationDisplayName": {
+            "description": "Destination name to display",
+            "type": "string"
+          }
+        }
+      },
+      "Account": {
+        "description": "No description provided.",
+        "required": [
+          "AccountSettings",
+          "DisplayName",
+          "Type"
+        ],
+        "type": "object",
+        "properties": {
+          "DisplayName": {
+            "description": "Display name",
+            "type": "string"
+          },
+          "Type": {
+            "format": "int32",
+            "description": "Account type",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              1001,
+              1002
+            ],
+            "type": "integer"
+          },
+          "AccountSettings": {
+            "$ref": "#/components/schemas/Settings"
+          }
+        }
+      },
+      "Settings": {
+        "description": "Storage Settings structure",
+        "type": "object",
+        "properties": {
+          "GoogleCloudPlatform": {
+            "$ref": "#/components/schemas/GoogleCloudPlatformSettings"
+          },
+          "AmazonS3": {
+            "$ref": "#/components/schemas/AmazonS3Settings"
+          },
+          "Azure": {
+            "$ref": "#/components/schemas/AzureSettings"
+          },
+          "OpenStack": {
+            "$ref": "#/components/schemas/OpenStackSettings"
+          },
+          "Oracle": {
+            "$ref": "#/components/schemas/OpenStackCompatible"
+          },
+          "S3Compatible": {
+            "$ref": "#/components/schemas/S3CompatibleSettings"
+          },
+          "Cloudian": {
+            "$ref": "#/components/schemas/CloudianSettings"
+          },
+          "FS": {
+            "$ref": "#/components/schemas/FSSettings"
+          },
+          "Wasabi": {
+            "$ref": "#/components/schemas/WasabiSettings"
+          },
+          "Minio": {
+            "$ref": "#/components/schemas/MinioSettings"
+          }
+        }
+      },
+      "GoogleCloudPlatformSettings": {
+        "description": "Google Cloud Platform account settings",
+        "required": [
+          "BinaryKeyAsBase64",
+          "ProjectID",
+          "ServiceAccountEmail"
+        ],
+        "type": "object",
+        "properties": {
+          "ServiceAccountEmail": {
+            "description": "Service Account Email",
+            "type": "string"
+          },
+          "BinaryKeyAsBase64": {
+            "description": "Binary Key as Base64 string",
+            "type": "string"
+          },
+          "ProjectID": {
+            "description": "Project ID",
+            "type": "string"
+          }
+        }
+      },
+      "AmazonS3Settings": {
+        "description": "Amazon S3 settings",
+        "type": "object",
+        "properties": {
+          "AccessKey": {
+            "description": "Access key",
+            "type": "string"
+          },
+          "SecretKey": {
+            "description": "Secret key",
+            "type": "string"
+          },
+          "IsGovCloud": {
+            "description": "Gov Cloud. Required only Amazon S3",
+            "type": "boolean"
+          }
+        }
+      },
+      "AzureSettings": {
+        "description": "Microsoft Azure settings",
+        "type": "object",
+        "properties": {
+          "AccountName": {
+            "description": "Account name",
+            "type": "string"
+          },
+          "SharedKey": {
+            "description": "Shared key",
+            "type": "string"
+          },
+          "AccountType": {
+            "format": "int32",
+            "description": "Account Type",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "type": "integer"
+          },
+          "CustomEndpoint": {
+            "description": "Custom Endpoint",
+            "type": "string"
+          }
+        }
+      },
+      "OpenStackSettings": {
+        "description": "OpenStack settings",
+        "type": "object",
+        "properties": {
+          "IgnoreCertificate": {
+            "description": "Ignore certificate",
+            "type": "boolean"
+          },
+          "NotCheckCredentials": {
+            "description": "Do not check credentials (no public access)",
+            "type": "boolean"
+          },
+          "UserName": {
+            "description": "User name",
+            "type": "string"
+          },
+          "ApiKey": {
+            "description": "Api Key",
+            "type": "string"
+          },
+          "AuthService": {
+            "description": "Authentication service",
+            "type": "string"
+          },
+          "KeyStoneVersion": {
+            "format": "int32",
+            "description": "Keystone version",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer"
+          },
+          "TenantType": {
+            "format": "int32",
+            "description": "Tenant Type. Required for Key stone version 2",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "Tenant": {
+            "description": "Tenant",
+            "type": "string"
+          },
+          "UseInternalURLs": {
+            "description": "Use internal URLs. Required for Key stone version 2 and 3",
+            "type": "boolean"
+          },
+          "DomainType": {
+            "format": "int32",
+            "description": "Domain Type. Required for Key stone version 3",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "Domain": {
+            "description": "Domain. Required for Key stone version 3",
+            "type": "string"
+          },
+          "UseScope": {
+            "description": "Use scope. Required for Key stone version 3",
+            "type": "boolean"
+          },
+          "ProjectType": {
+            "format": "int32",
+            "description": "Project type. Required for Key stone version 3 and if UseScope is true",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "Project": {
+            "description": "Project. Required for Key stone version 3 and if UseScope is true",
+            "type": "string"
+          }
+        }
+      },
+      "OpenStackCompatible": {
+        "description": "No description provided.",
+        "type": "object",
+        "properties": {
+          "UserName": {
+            "description": "User name",
+            "type": "string"
+          },
+          "ApiKey": {
+            "description": "Api Key",
+            "type": "string"
+          },
+          "AuthService": {
+            "description": "Authentication service",
+            "type": "string"
+          },
+          "KeyStoneVersion": {
+            "format": "int32",
+            "description": "Keystone version",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer"
+          },
+          "TenantType": {
+            "format": "int32",
+            "description": "Tenant Type. Required for Key stone version 2",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "Tenant": {
+            "description": "Tenant",
+            "type": "string"
+          },
+          "UseInternalURLs": {
+            "description": "Use internal URLs. Required for Key stone version 2 and 3",
+            "type": "boolean"
+          },
+          "DomainType": {
+            "format": "int32",
+            "description": "Domain Type. Required for Key stone version 3",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "Domain": {
+            "description": "Domain. Required for Key stone version 3",
+            "type": "string"
+          },
+          "UseScope": {
+            "description": "Use scope. Required for Key stone version 3",
+            "type": "boolean"
+          },
+          "ProjectType": {
+            "format": "int32",
+            "description": "Project type. Required for Key stone version 3 and if UseScope is true",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "Project": {
+            "description": "Project. Required for Key stone version 3 and if UseScope is true",
+            "type": "string"
+          }
+        }
+      },
+      "S3CompatibleSettings": {
+        "description": "S3 Compatible settings",
+        "type": "object",
+        "properties": {
+          "UseNativeMultipartUpload": {
+            "description": "Use Native Multipart Upload.",
+            "type": "boolean"
+          },
+          "HTTPEnpoint": {
+            "description": "HTTP endpoint",
+            "type": "string"
+          },
+          "HTTPSEndpoint": {
+            "description": "HTTPS endpoint",
+            "type": "string"
+          },
+          "IgnoreCertificate": {
+            "description": "Ignore certificate",
+            "type": "boolean"
+          },
+          "NotCheckCredentials": {
+            "description": "Do not check credentials (no public access)",
+            "type": "boolean"
+          },
+          "SignatureVersion": {
+            "format": "int32",
+            "description": "Signature version. Required for S3Compatible accounts",
+            "enum": [
+              2,
+              4
+            ],
+            "type": "integer"
+          },
+          "AccessKey": {
+            "description": "Access key",
+            "type": "string"
+          },
+          "SecretKey": {
+            "description": "Secret key",
+            "type": "string"
+          },
+          "IsGovCloud": {
+            "description": "Gov Cloud. Required only Amazon S3",
+            "type": "boolean"
+          }
+        }
+      },
+      "CloudianSettings": {
+        "description": "Cloudian settings",
+        "type": "object",
+        "properties": {
+          "UseNativeMultipartUpload": {
+            "description": "Use Native Multipart Upload.",
+            "type": "boolean"
+          },
+          "HTTPEnpoint": {
+            "description": "HTTP endpoint",
+            "type": "string"
+          },
+          "HTTPSEndpoint": {
+            "description": "HTTPS endpoint",
+            "type": "string"
+          },
+          "IgnoreCertificate": {
+            "description": "Ignore certificate",
+            "type": "boolean"
+          },
+          "NotCheckCredentials": {
+            "description": "Do not check credentials (no public access)",
+            "type": "boolean"
+          },
+          "SignatureVersion": {
+            "format": "int32",
+            "description": "Signature version. Required for S3Compatible accounts",
+            "enum": [
+              2,
+              4
+            ],
+            "type": "integer"
+          },
+          "AccessKey": {
+            "description": "Access key",
+            "type": "string"
+          },
+          "SecretKey": {
+            "description": "Secret key",
+            "type": "string"
+          },
+          "IsGovCloud": {
+            "description": "Gov Cloud. Required only Amazon S3",
+            "type": "boolean"
+          }
+        }
+      },
+      "FSSettings": {
+        "description": "Centrally Managed File System account settings",
+        "type": "object",
+        "properties": {
+          "Login": {
+            "description": "Login",
+            "type": "string"
+          },
+          "Pass": {
+            "description": "Password",
+            "type": "string"
+          },
+          "Path": {
+            "description": "Path to shared data",
+            "type": "string"
+          }
+        }
+      },
+      "WasabiSettings": {
+        "description": "Wasabi settings",
+        "type": "object",
+        "properties": {
+          "AccessKey": {
+            "description": "Access Key",
+            "type": "string"
+          },
+          "SecretKey": {
+            "description": "Secret Key",
+            "type": "string"
+          }
+        }
+      },
+      "MinioSettings": {
+        "description": "Minio settings",
+        "type": "object",
+        "properties": {
+          "AccessKey": {
+            "description": "Access Key",
+            "type": "string"
+          },
+          "SecretKey": {
+            "description": "Secret Key",
+            "type": "string"
+          },
+          "HTTPEnpoint": {
+            "description": "HTTP endpoint",
+            "type": "string"
+          },
+          "HTTPSEndpoint": {
+            "description": "HTTPS endpoint",
+            "type": "string"
+          },
+          "IgnoreCertificate": {
+            "description": "Ignore certificate",
+            "type": "boolean"
+          },
+          "NotCheckCredentials": {
+            "description": "Do not check credentials (no public access)",
+            "type": "boolean"
+          }
+        }
+      },
+      "EditAccount": {
+        "description": "Structure of MBS account to edit",
+        "required": [
+          "AccountID",
+          "AccountSettings",
+          "DisplayName",
+          "Type"
+        ],
+        "type": "object",
+        "properties": {
+          "AccountID": {
+            "format": "uuid",
+            "description": "Unique ID of edit account",
+            "type": "string"
+          },
+          "DisplayName": {
+            "description": "Display name",
+            "type": "string"
+          },
+          "Type": {
+            "format": "int32",
+            "description": "Account type",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              1001,
+              1002
+            ],
+            "type": "integer"
+          },
+          "AccountSettings": {
+            "$ref": "#/components/schemas/Settings"
+          }
+        }
+      },
+      "AccountsModels": {
+        "description": "No description provided.",
+        "type": "object",
+        "properties": {
+          "AccountID": {
+            "description": "Account unique identifier",
+            "type": "string"
+          },
+          "DateCreated": {
+            "format": "date-time",
+            "description": "Date Created",
+            "type": "string"
+          },
+          "DisplayName": {
+            "description": "Display Name",
+            "type": "string"
+          },
+          "StorageType": {
+            "description": "Storage Type",
+            "type": "string"
+          },
+          "Destinations": {
+            "description": "Destination List",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DestinationOfAccount"
+            }
+          }
+        }
+      },
+      "DestinationOfAccountCreate": {
+        "description": "Storage account destination model",
+        "required": [
+          "AccountID",
+          "Destination"
+        ],
+        "type": "object",
+        "properties": {
+          "AccountID": {
+            "format": "uuid",
+            "description": "Storage account ID",
+            "type": "string"
+          },
+          "Destination": {
+            "description": "Destination name",
+            "type": "string"
+          },
+          "DestinationDisplayName": {
+            "description": "Destination name to display",
+            "type": "string"
+          }
+        }
+      },
+      "AccountDestinationCreateModel": {
+        "description": "New destination creating model",
+        "required": [
+          "AccountID",
+          "DestinationSettings",
+          "DisplayName"
+        ],
+        "type": "object",
+        "properties": {
+          "AccountID": {
+            "format": "uuid",
+            "description": "Storage account ID",
+            "type": "string"
+          },
+          "DisplayName": {
+            "description": "Destination display name",
+            "type": "string"
+          },
+          "DestinationSettings": {
+            "$ref": "#/components/schemas/StorageDestinationSettings"
+          }
+        }
+      },
+      "StorageDestinationSettings": {
+        "description": "Account destination parameters",
+        "type": "object",
+        "properties": {
+          "GoogleCloudPlatform": {
+            "$ref": "#/components/schemas/GoogleDestinationModel"
+          },
+          "AmazonS3": {
+            "$ref": "#/components/schemas/S3DestinationModel"
+          },
+          "Wasabi": {
+            "$ref": "#/components/schemas/StorageDestinationWithLocationModel"
+          },
+          "S3Compatible": {
+            "$ref": "#/components/schemas/StorageDestinationModelBase"
+          },
+          "Azure": {
+            "$ref": "#/components/schemas/StorageDestinationModelBase"
+          },
+          "B2": {
+            "$ref": "#/components/schemas/StorageDestinationModelBase"
+          }
+        }
+      },
+      "GoogleDestinationModel": {
+        "description": "Destination settings for Google Cloud storage",
+        "type": "object",
+        "properties": {
+          "StorageClass": {
+            "$ref": "#/components/schemas/GoogleStorageClass"
+          },
+          "RegionalLocation": {
+            "format": "int32",
+            "description": "Regional location",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20
+            ],
+            "type": "integer"
+          },
+          "BucketName": {
+            "description": "Name of the bucket used to store data in the cloud storage(It is called bucket in all cloud...",
+            "type": "string"
+          },
+          "UseImmutability": {
+            "type": "boolean"
+          }
+        }
+      },
+      "S3DestinationModel": {
+        "description": "Destination settings for Amazon S3 cloud storage",
+        "type": "object",
+        "properties": {
+          "UseS3TransferAcceleration": {
+            "description": "Amazon S3 Transfer Acceleration enables fast data transfers.",
+            "type": "boolean"
+          },
+          "Region": {
+            "description": "Region of the bucket(container for Azure)",
+            "type": "string"
+          },
+          "BucketName": {
+            "description": "Name of the bucket used to store data in the cloud storage(It is called bucket in all cloud...",
+            "type": "string"
+          },
+          "UseImmutability": {
+            "type": "boolean"
+          }
+        }
+      },
+      "StorageDestinationWithLocationModel": {
+        "description": "Destination settings for cloud storages which buckets(containers for azure) have a regional...",
+        "type": "object",
+        "properties": {
+          "Region": {
+            "description": "Region of the bucket(container for Azure)",
+            "type": "string"
+          },
+          "BucketName": {
+            "description": "Name of the bucket used to store data in the cloud storage(It is called bucket in all cloud...",
+            "type": "string"
+          },
+          "UseImmutability": {
+            "type": "boolean"
+          }
+        }
+      },
+      "StorageDestinationModelBase": {
+        "description": "Destination settings for cloud storages(Amason S3, Microsoft Azure, Backblaze B2, Google Cloud, S3...",
+        "type": "object",
+        "properties": {
+          "BucketName": {
+            "description": "Name of the bucket used to store data in the cloud storage(It is called bucket in all cloud...",
+            "type": "string"
+          },
+          "UseImmutability": {
+            "type": "boolean"
+          }
+        }
+      },
+      "GoogleStorageClass": {
+        "type": "object",
+        "properties": {
+          "StorageClass": {
+            "format": "int32",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "type": "integer",
+            "readOnly": true
+          },
+          "DisplayName": {
+            "type": "string",
+            "readOnly": true
+          },
+          "ID": {
+            "format": "int32",
+            "type": "integer",
+            "readOnly": true
+          }
+        }
+      },
+      "AdministratorsModels": {
+        "description": "Structure of administrators",
+        "type": "object",
+        "properties": {
+          "AdminID": {
+            "format": "uuid",
+            "description": "Administrator unique identification",
+            "type": "string"
+          },
+          "Email": {
+            "description": "Administrator email",
+            "type": "string"
+          },
+          "FirstName": {
+            "description": "First name",
+            "type": "string"
+          },
+          "LastName": {
+            "description": "Last name",
+            "type": "string"
+          },
+          "Enabled": {
+            "description": "Enabled or disabled administrator",
+            "type": "boolean"
+          },
+          "PermissionsModels": {
+            "$ref": "#/components/schemas/PermissionsModels"
+          },
+          "LastLogin": {
+            "format": "date-time",
+            "description": "Last login date",
+            "type": "string"
+          },
+          "DateCreated": {
+            "format": "date-time",
+            "description": "Date created",
+            "type": "string"
+          },
+          "Companies": {
+            "description": "Administrator companies",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "AccessToCompaniesMode": {
+            "format": "int32",
+            "description": "            Access To Companies            \r\n\t\t\t\r\n\t\t\tNote:\r\n            The default is...",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "AccountType": {
+            "format": "int32",
+            "description": "            This value is intended for future RBAC.",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer",
+            "readOnly": true
+          }
+        }
+      },
+      "PermissionsModels": {
+        "description": "Structure of administrator permissions",
+        "required": [
+          "ADS",
+          "Administrators",
+          "AuditLog",
+          "BackupHistory",
+          "Billing",
+          "CapacityReport",
+          "CloudRestore",
+          "Dashboard",
+          "Downloads",
+          "EC2Snapshots",
+          "GoogleApps",
+          "HelpMarketing",
+          "LicenseActivate",
+          "LicenseBuy",
+          "LicenseUsageHistory",
+          "Licenses",
+          "ManageCompanies",
+          "Monitiring",
+          "Notification",
+          "OnlineAccess",
+          "PSA",
+          "PurchaseHistory",
+          "Rebranding",
+          "RemoteDeploy",
+          "RemoteManagment",
+          "Storage",
+          "StorageLimit",
+          "StorageUsage",
+          "Users",
+          "UsersCreateEdit",
+          "UsersDelete"
+        ],
+        "type": "object",
+        "properties": {
+          "Users": {
+            "format": "int32",
+            "description": "Permission for manage users",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "StorageLimit": {
+            "format": "int32",
+            "description": "Permission for manage storage limit",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "Notification": {
+            "format": "int32",
+            "description": "Permission for manage notification",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "OnlineAccess": {
+            "format": "int32",
+            "description": "Permission for manage Online Access",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "Licenses": {
+            "format": "int32",
+            "description": "Permission for manage Licenses",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "Billing": {
+            "format": "int32",
+            "description": "Permission for manage billing",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "Monitiring": {
+            "format": "int32",
+            "description": "Permission for manage monitoring",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "RemoteDeploy": {
+            "format": "int32",
+            "description": "Permission for manage remote deploy",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "RemoteManagment": {
+            "format": "int32",
+            "description": "Permission for manage remote management",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "HelpMarketing": {
+            "format": "int32",
+            "description": "Permission for marketing and help",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "AuditLog": {
+            "format": "int32",
+            "description": "Permission for manage AuditLog",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "PSA": {
+            "format": "int32",
+            "description": "Permission for manage connectwise and autotask",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "Administrators": {
+            "format": "int32",
+            "description": "Permission for manage administrators",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "Rebranding": {
+            "format": "int32",
+            "description": "Permission for manage rebranding",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "Storage": {
+            "format": "int32",
+            "description": "Permission for manage storages",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "ADS": {
+            "format": "int32",
+            "description": "Permission for manage AD Bridge",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "LicenseBuy": {
+            "format": "int32",
+            "description": "Permission for buy licenses",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "LicenseActivate": {
+            "format": "int32",
+            "description": "Permission for activate licenses",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "StorageUsage": {
+            "format": "int32",
+            "description": "Permission for storage usages",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "CapacityReport": {
+            "format": "int32",
+            "description": "Permission for capacity report",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "GoogleApps": {
+            "format": "int32",
+            "description": "Permission for manage google apps",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "Dashboard": {
+            "format": "int32",
+            "description": "Permission for dashboard",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "Downloads": {
+            "format": "int32",
+            "description": "Show Downloads",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "CloudRestore": {
+            "format": "int32",
+            "description": "Manage Cloud Restore",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "EC2Snapshots": {
+            "format": "int32",
+            "description": "Manage EC2 Snapshots",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "LicenseUsageHistory": {
+            "format": "int32",
+            "description": "License Usage History",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "BackupHistory": {
+            "format": "int32",
+            "description": "Backup History",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "PurchaseHistory": {
+            "format": "int32",
+            "description": "Purchase History",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "UsersCreateEdit": {
+            "format": "int32",
+            "description": "Allowed Create and Edit Users",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "UsersDelete": {
+            "format": "int32",
+            "description": "Allowed Delete Users",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "ManageCompanies": {
+            "format": "int32",
+            "description": "Allowed to Manage companies",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "ManageImmutability": {
+            "format": "int32",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          },
+          "ManageTags": {
+            "format": "int32",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          }
+        }
+      },
+      "AdministratorsNewModels": {
+        "description": "Structure for create administrator",
+        "required": [
+          "Email",
+          "Enabled",
+          "InitialPassword",
+          "PermissionsModels"
+        ],
+        "type": "object",
+        "properties": {
+          "Email": {
+            "description": "Administrator email",
+            "type": "string"
+          },
+          "InitialPassword": {
+            "description": "Initial password",
+            "type": "string"
+          },
+          "SendInstruction": {
+            "description": "Send email with instruction to administrator",
+            "type": "boolean"
+          },
+          "FirstName": {
+            "description": "First name",
+            "type": "string"
+          },
+          "LastName": {
+            "description": "Last name",
+            "type": "string"
+          },
+          "Enabled": {
+            "description": "Enabled or disabled administrator",
+            "type": "boolean"
+          },
+          "AccountType": {
+            "format": "int32",
+            "description": "            This value is intended for future RBAC.",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer"
+          },
+          "PermissionsModels": {
+            "$ref": "#/components/schemas/PermissionsModels"
+          },
+          "Companies": {
+            "description": "Administrator companies",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "AccessToCompaniesMode": {
+            "format": "int32",
+            "description": "            Access To Companies            \r\n\t\t\t\r\n\t\t\tNote:\r\n            The default is...",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          }
+        }
+      },
+      "AdministratorsEditModels": {
+        "description": "Structure for edit administrator",
+        "required": [
+          "AdminID",
+          "Enabled",
+          "PermissionsModels"
+        ],
+        "type": "object",
+        "properties": {
+          "AdminID": {
+            "format": "uuid",
+            "description": "Administrator unique identification",
+            "type": "string"
+          },
+          "Password": {
+            "description": "Initial password",
+            "type": "string"
+          },
+          "FirstName": {
+            "description": "First name",
+            "type": "string"
+          },
+          "LastName": {
+            "description": "Last name",
+            "type": "string"
+          },
+          "Enabled": {
+            "description": "Enabled or disabled administrator",
+            "type": "boolean"
+          },
+          "PermissionsModels": {
+            "$ref": "#/components/schemas/PermissionsModels"
+          },
+          "Companies": {
+            "description": "Administrator companies",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "AccountType": {
+            "format": "int32",
+            "description": "This value is intended for future RBAC.",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer"
+          },
+          "AccessToCompaniesMode": {
+            "format": "int32",
+            "description": "            Access To Companies            \r\n\t\t\t\r\n\t\t\tNote:\r\n            The default is...",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          }
+        }
+      },
+      "BillingModels": {
+        "description": "Views monthly usage report per user and generate invoices",
+        "type": "object",
+        "properties": {
+          "CurrentSpaceUsed": {
+            "format": "int64",
+            "description": "A space used by all users at the moment. This value is updated once a day",
+            "type": "integer"
+          },
+          "AverageSpaceUsed": {
+            "format": "int64",
+            "description": "An average of a space used by all users for selected month.",
+            "type": "integer"
+          },
+          "TotalRestore": {
+            "format": "int64",
+            "description": "Total restore value",
+            "type": "integer"
+          },
+          "StatisticBilling": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StatisticBillingModels"
+            }
+          }
+        }
+      },
+      "StatisticBillingModels": {
+        "description": "Billing Statistic",
+        "type": "object",
+        "properties": {
+          "UserId": {
+            "format": "uuid",
+            "description": "User unique identifier",
+            "type": "string"
+          },
+          "Email": {
+            "description": "User login (email)",
+            "type": "string"
+          },
+          "FirstName": {
+            "description": "User first name",
+            "type": "string"
+          },
+          "LastName": {
+            "description": "User last name",
+            "type": "string"
+          },
+          "CompanyName": {
+            "description": "Company Name",
+            "type": "string"
+          },
+          "AverageSpace": {
+            "format": "int64",
+            "description": "Average Space Used",
+            "type": "integer"
+          },
+          "TotalVolumeRestore": {
+            "format": "int64",
+            "description": "Total Volume Restore",
+            "type": "integer"
+          },
+          "PlanCost": {
+            "format": "double",
+            "description": "Plan Cost",
+            "type": "number"
+          },
+          "StorageCost": {
+            "format": "double",
+            "description": "Storage Cost",
+            "type": "number"
+          },
+          "RestoreCost": {
+            "format": "double",
+            "description": "Restore Cost",
+            "type": "number"
+          },
+          "TotalCost": {
+            "format": "double",
+            "description": "Total Cost",
+            "type": "number"
+          }
+        }
+      },
+      "FilterTotalModels": {
+        "description": "Structure of billing filter",
+        "type": "object",
+        "properties": {
+          "CompanyName": {
+            "description": "If empty or pass will be ignored",
+            "type": "string"
+          },
+          "Date": {
+            "format": "date-time",
+            "description": "If empty or pass will set current month",
+            "type": "string"
+          }
+        }
+      },
+      "FilterDetailModels": {
+        "description": "Structure of details filter",
+        "required": [
+          "UserID"
+        ],
+        "type": "object",
+        "properties": {
+          "UserID": {
+            "format": "uuid",
+            "description": "User unique identifier",
+            "type": "string"
+          },
+          "Date": {
+            "format": "date-time",
+            "description": "If empty or pass will set current month",
+            "type": "string"
+          }
+        }
+      },
+      "DetailModels": {
+        "description": "Detail information for user",
+        "type": "object",
+        "properties": {
+          "TotalBackupBytes": {
+            "format": "int64",
+            "description": "Total Backup Bytes",
+            "type": "integer"
+          },
+          "TotalRestoreBytes": {
+            "format": "int64",
+            "description": "Total Backup Bytes",
+            "type": "integer"
+          },
+          "UserID": {
+            "format": "uuid",
+            "description": "User unique identifier",
+            "type": "string"
+          },
+          "UserDetailList": {
+            "description": "User Detail List of Billing Information",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserDetailModels"
+            }
+          }
+        }
+      },
+      "UserDetailModels": {
+        "description": "Record of Detail Billing Information",
+        "type": "object",
+        "properties": {
+          "Computer": {
+            "description": "Computer Name",
+            "type": "string"
+          },
+          "SizeBackup": {
+            "format": "int64",
+            "description": "Backup Total Volume",
+            "type": "integer"
+          },
+          "SizeRestore": {
+            "format": "int64",
+            "description": "Restore Total Volume",
+            "type": "integer"
+          },
+          "Prefix": {
+            "description": "Prefix Name",
+            "type": "string"
+          },
+          "AccountID": {
+            "format": "uuid",
+            "description": "Storage Account ID",
+            "type": "string"
+          },
+          "Destination": {
+            "description": "Backup/Restore Destination",
+            "type": "string"
+          }
+        }
+      },
+      "BuildModels": {
+        "description": "Build structure fields",
+        "type": "object",
+        "properties": {
+          "Type": {
+            "description": "The type of build",
+            "type": "string"
+          },
+          "Version": {
+            "description": "Build version",
+            "type": "string"
+          },
+          "DownloadLink": {
+            "description": "Download Link",
+            "type": "string"
+          },
+          "IsSandbox": {
+            "type": "boolean"
+          }
+        }
+      },
+      "RequestBuilds": {
+        "type": "object",
+        "properties": {
+          "Editions": {
+            "type": "array",
+            "items": {
+              "format": "int32",
+              "enum": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+              ],
+              "type": "integer"
+            }
+          },
+          "Type": {
+            "format": "int32",
+            "enum": [
+              0,
+              1
+            ],
+            "type": "integer"
+          }
+        }
+      },
+      "BuildEditionModel": {
+        "description": "Build structure fields",
+        "type": "object",
+        "properties": {
+          "Type": {
+            "format": "int32",
+            "description": "The type of build",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "type": "integer"
+          },
+          "Version": {
+            "description": "Build version",
+            "type": "string"
+          }
+        }
+      },
+      "DomainModel": {
+        "type": "object",
+        "properties": {
+          "Domain": {
+            "type": "string"
+          },
+          "Storage": {
+            "type": "string"
+          },
+          "StorageLimit": {
+            "$ref": "#/components/schemas/StorageLimitInfo"
+          },
+          "StorageUsage": {
+            "$ref": "#/components/schemas/StorageUsageInfo"
+          },
+          "ActivatedLicenses": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      },
+      "StorageLimitInfo": {
+        "type": "object",
+        "properties": {
+          "TotalLimit": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "CommandDriveLimit": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "OtherServicesLimit": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      },
+      "StorageUsageInfo": {
+        "type": "object",
+        "properties": {
+          "Total": {
+            "format": "int64",
+            "type": "integer"
+          }
+        }
+      },
+      "CompanyModel": {
+        "description": "Company data structure for editing",
+        "type": "object",
+        "properties": {
+          "Id": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "StorageLimit": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "LicenseSettings": {
+            "format": "int32",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer"
+          },
+          "Destinations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompanyDestinationModel"
+            }
+          }
+        }
+      },
+      "CompanyDestinationModel": {
+        "description": "Company destination structure",
+        "type": "object",
+        "properties": {
+          "DestinationId": {
+            "format": "uuid",
+            "description": "Destination bucket ID",
+            "type": "string"
+          }
+        }
+      },
+      "CompanyCreateModel": {
+        "description": "Company data structure for a new company creating",
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string"
+          },
+          "StorageLimit": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "LicenseSettings": {
+            "format": "int32",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer"
+          },
+          "Destinations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompanyDestinationModel"
+            }
+          }
+        }
+      },
+      "CancellationToken": {
+        "type": "object",
+        "properties": {
+          "IsCancellationRequested": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "CanBeCanceled": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "WaitHandle": {
+            "$ref": "#/components/schemas/WaitHandle"
+          }
+        }
+      },
+      "WaitHandle": {
+        "type": "object",
+        "properties": {
+          "Handle": {
+            "type": "object"
+          },
+          "SafeWaitHandle": {
+            "$ref": "#/components/schemas/SafeWaitHandle"
+          }
+        }
+      },
+      "SafeWaitHandle": {
+        "type": "object",
+        "properties": {
+          "IsInvalid": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "IsClosed": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        }
+      },
+      "AuthorizeComputerRequest": {
+        "type": "object",
+        "properties": {
+          "UserId": {
+            "type": "string"
+          },
+          "CompanyId": {
+            "type": "string"
+          }
+        }
+      },
+      "AddUserDestination": {
+        "required": [
+          "AccountID",
+          "Destination",
+          "PackageID",
+          "UserID"
+        ],
+        "type": "object",
+        "properties": {
+          "UserID": {
+            "type": "string"
+          },
+          "AccountID": {
+            "type": "string"
+          },
+          "Destination": {
+            "type": "string"
+          },
+          "PackageID": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      },
+      "UserDestinationsModel": {
+        "description": "Structure that describe user destination",
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "string"
+          },
+          "CurrentVolume": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "PackageID": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "AccountID": {
+            "type": "string"
+          },
+          "AccountDisplayName": {
+            "type": "string"
+          },
+          "Destination": {
+            "type": "string"
+          },
+          "DestinationDisplayName": {
+            "type": "string"
+          }
+        }
+      },
+      "EditUserDestination": {
+        "required": [
+          "AccountID",
+          "Destination",
+          "ID",
+          "PackageID",
+          "UserID"
+        ],
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "string"
+          },
+          "UserID": {
+            "type": "string"
+          },
+          "AccountID": {
+            "type": "string"
+          },
+          "Destination": {
+            "type": "string"
+          },
+          "PackageID": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      },
+      "LicensesModels": {
+        "description": "License structure fields",
+        "type": "object",
+        "properties": {
+          "ID": {
+            "description": "License unique identifier",
+            "type": "string"
+          },
+          "Number": {
+            "format": "int32",
+            "description": "License number",
+            "type": "integer"
+          },
+          "ComputerName": {
+            "description": "Computer name",
+            "type": "string"
+          },
+          "OperatingSystem": {
+            "description": "Operating system",
+            "type": "string"
+          },
+          "IsTrial": {
+            "description": "Kind of license: true – trial, false – paid",
+            "type": "boolean"
+          },
+          "IsTaken": {
+            "description": "The license in use or not.",
+            "type": "boolean"
+          },
+          "LicenseType": {
+            "description": "The type of license",
+            "type": "string"
+          },
+          "DateExpired": {
+            "format": "date-time",
+            "description": "Date Expired of License",
+            "type": "string"
+          },
+          "Transaction": {
+            "description": "Transaction of License",
+            "type": "string"
+          },
+          "User": {
+            "description": "User of License",
+            "type": "string"
+          },
+          "UserID": {
+            "description": "User unique identifier",
+            "type": "string"
+          }
+        }
+      },
+      "LicenseOperation": {
+        "description": "License structure fields for operation grant, remove and release",
+        "required": [
+          "LicenseID",
+          "UserID"
+        ],
+        "type": "object",
+        "properties": {
+          "LicenseID": {
+            "description": "Old license unique identifier for operation",
+            "type": "string"
+          },
+          "UserID": {
+            "description": "User unique of the existing user identifier for operation",
+            "type": "string"
+          }
+        }
+      },
+      "MonitoringModels": {
+        "description": "A list of monitoring structures",
+        "type": "object",
+        "properties": {
+          "PlanName": {
+            "description": "Plan name.",
+            "type": "string"
+          },
+          "CompanyName": {
+            "description": "Company name",
+            "type": "string"
+          },
+          "UserName": {
+            "description": "User email.",
+            "type": "string"
+          },
+          "UserID": {
+            "description": "User unique identifier",
+            "type": "string"
+          },
+          "ComputerName": {
+            "description": "Computer name.",
+            "type": "string"
+          },
+          "ComputerHid": {
+            "type": "string"
+          },
+          "BuildVersion": {
+            "description": "Build version.",
+            "type": "string"
+          },
+          "StorageType": {
+            "description": "Storage type",
+            "type": "string"
+          },
+          "LastStart": {
+            "format": "date-time",
+            "description": "Last start",
+            "type": "string"
+          },
+          "NextStart": {
+            "format": "date-time",
+            "description": "Next run.",
+            "type": "string"
+          },
+          "Status": {
+            "format": "int32",
+            "description": "Status of plan.",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "type": "integer"
+          },
+          "ErrorMessage": {
+            "description": "Error message.",
+            "type": "string"
+          },
+          "FilesCopied": {
+            "format": "int64",
+            "description": "Files Copied",
+            "type": "integer"
+          },
+          "FilesFailed": {
+            "format": "int64",
+            "description": "Files Failed",
+            "type": "integer"
+          },
+          "DataCopied": {
+            "format": "int64",
+            "description": "Size Data Copied",
+            "type": "integer"
+          },
+          "Duration": {
+            "description": "Duration of Operation",
+            "type": "string"
+          },
+          "DataToBackup": {
+            "format": "int64",
+            "description": "Size Data To Backup",
+            "type": "integer"
+          },
+          "TotalData": {
+            "format": "int64",
+            "description": "Size Total Data",
+            "type": "integer"
+          },
+          "FilesScanned": {
+            "format": "int64",
+            "description": "Files Scanned",
+            "type": "integer"
+          },
+          "FilesToBackup": {
+            "format": "int64",
+            "description": "Files To Backup",
+            "type": "integer"
+          },
+          "PlanId": {
+            "description": "Plan unique identifier",
+            "type": "string"
+          },
+          "PlanType": {
+            "format": "int32",
+            "description": "Plan Type",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17
+            ],
+            "type": "integer"
+          },
+          "DetailedReportLink": {
+            "description": "Detailed Report Link",
+            "type": "string"
+          }
+        }
+      },
+      "PackagesModels": {
+        "description": "Package structure fields",
+        "required": [
+          "Enabled",
+          "ID",
+          "Name",
+          "isGlacierRestoreLimit"
+        ],
+        "type": "object",
+        "properties": {
+          "ID": {
+            "format": "int32",
+            "description": "Package unique identifier",
+            "type": "integer"
+          },
+          "Cost": {
+            "format": "double",
+            "type": "number"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Enabled": {
+            "type": "boolean"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "StorageLimit": {
+            "format": "double",
+            "description": "In Gb",
+            "type": "number"
+          },
+          "isGlacierRestoreLimit": {
+            "type": "boolean"
+          },
+          "RestoreLimit": {
+            "format": "double",
+            "description": "In Gb",
+            "type": "number"
+          },
+          "GlacierRestoreType": {
+            "format": "int32",
+            "description": "Only for Amazon to Glacier accounts.",
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "type": "integer"
+          },
+          "UseRestoreLimit": {
+            "description": "User restore limit. Default value is 'false'",
+            "type": "boolean"
+          }
+        }
+      },
+      "PackageCreate": {
+        "description": "Package create structure fields",
+        "required": [
+          "Cost",
+          "Name",
+          "StorageLimit",
+          "isGlacierRestoreLimit"
+        ],
+        "type": "object",
+        "properties": {
+          "Name": {
+            "description": "Package name",
+            "type": "string"
+          },
+          "Description": {
+            "description": "Package description",
+            "type": "string"
+          },
+          "StorageLimit": {
+            "format": "double",
+            "description": "In Gb",
+            "type": "number"
+          },
+          "isGlacierRestoreLimit": {
+            "type": "boolean"
+          },
+          "RestoreLimit": {
+            "format": "double",
+            "description": "In Gb",
+            "type": "number"
+          },
+          "Cost": {
+            "format": "double",
+            "type": "number"
+          },
+          "GlacierRestoreType": {
+            "format": "int32",
+            "description": "Only for Amazon to Glacier accounts.",
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "type": "integer"
+          },
+          "UseRestoreLimit": {
+            "description": "User restore limit. Default value is 'false'",
+            "type": "boolean"
+          }
+        }
+      },
+      "LoginUserBindingModel": {
+        "required": [
+          "Password",
+          "UserName"
+        ],
+        "type": "object",
+        "properties": {
+          "UserName": {
+            "description": "Login, parameter required",
+            "type": "string"
+          },
+          "Password": {
+            "description": "Password, parameter required.",
+            "maxLength": 100,
+            "minLength": 3,
+            "type": "string"
+          }
+        }
+      },
+      "UsersModels": {
+        "description": "User structure fields",
+        "type": "object",
+        "properties": {
+          "ID": {
+            "description": "User unique identifier",
+            "type": "string"
+          },
+          "Email": {
+            "description": "User login (email)",
+            "type": "string"
+          },
+          "FirstName": {
+            "type": "string"
+          },
+          "LastName": {
+            "type": "string"
+          },
+          "NotificationEmails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Company": {
+            "type": "string"
+          },
+          "Enabled": {
+            "type": "boolean"
+          },
+          "LicenseManagmentMode": {
+            "format": "int32",
+            "description": "Mode of user license management",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer"
+          },
+          "DestinationList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserDestinationsModel"
+            }
+          },
+          "SpaceUsed": {
+            "format": "int64",
+            "description": "Space Used (KB)",
+            "type": "integer"
+          }
+        }
+      },
+      "UsersEditModels": {
+        "description": "User structure fields for edit",
+        "required": [
+          "Enabled",
+          "ID"
+        ],
+        "type": "object",
+        "properties": {
+          "ID": {
+            "description": "User unique identifier",
+            "type": "string"
+          },
+          "Email": {
+            "description": "User login(email).",
+            "type": "string"
+          },
+          "FirstName": {
+            "type": "string"
+          },
+          "LastName": {
+            "type": "string"
+          },
+          "NotificationEmails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Company": {
+            "type": "string"
+          },
+          "Enabled": {
+            "type": "boolean"
+          },
+          "Password": {
+            "description": "User password",
+            "type": "string"
+          },
+          "LicenseManagmentMode": {
+            "format": "int32",
+            "description": "Mode of user license management",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer"
+          }
+        }
+      },
+      "UsersAddModels": {
+        "required": [
+          "Email",
+          "Enabled",
+          "Password"
+        ],
+        "type": "object",
+        "properties": {
+          "Email": {
+            "description": "User login(email)",
+            "type": "string"
+          },
+          "FirstName": {
+            "type": "string"
+          },
+          "LastName": {
+            "type": "string"
+          },
+          "NotificationEmails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Company": {
+            "type": "string"
+          },
+          "Enabled": {
+            "type": "boolean"
+          },
+          "Password": {
+            "description": "User password",
+            "maxLength": 100,
+            "minLength": 6,
+            "type": "string"
+          },
+          "DestinationList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DestinationForNewUser"
+            }
+          },
+          "SendEmailInstruction": {
+            "description": "Send email with instructions to the user",
+            "type": "boolean"
+          },
+          "LicenseManagmentMode": {
+            "format": "int32",
+            "description": "Mode of user license management",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer"
+          }
+        }
+      },
+      "DestinationForNewUser": {
+        "required": [
+          "AccountID",
+          "Destination",
+          "PackageID"
+        ],
+        "type": "object",
+        "properties": {
+          "AccountID": {
+            "type": "string"
+          },
+          "Destination": {
+            "type": "string"
+          },
+          "PackageID": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      },
+      "UserAuthData": {
+        "required": [
+          "Email",
+          "Password"
+        ],
+        "type": "object",
+        "properties": {
+          "Email": {
+            "description": "User login(email)",
+            "type": "string"
+          },
+          "Password": {
+            "description": "User password",
+            "type": "string"
+          }
+        }
+      },
+      "UserComputerData": {
+        "description": "Structure for working with user computer data",
+        "required": [
+          "ComputerName",
+          "DestinationId"
+        ],
+        "type": "object",
+        "properties": {
+          "DestinationId": {
+            "format": "uuid",
+            "description": "Policy ID",
+            "type": "string"
+          },
+          "ComputerName": {
+            "description": "Computer name",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "apiKey": {
+        "type": "apiKey",
+        "description": "API Key Authentication",
+        "name": "Token",
+        "in": "header"
+      }
+    },
+    "headers": {},
+    "responses": {},
+    "parameters": {}
+  },
+  "x-original-swagger-version": "2.0",
+  "tags": [],
+  "security": []
+}
